@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col s12 m9 l10"><h1>Dashboard</h1>
                 <ul>
-                    <li><span>Dashboard</span></li>
+                    <li><span>Dashboard Guiridhari</span></li>
                 </ul>
             </div>
         </div>
