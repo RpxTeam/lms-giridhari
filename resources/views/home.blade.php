@@ -1,15 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Dashboard')
+
 @section('content')
-    <div class="page-title">
-        <div class="row">
-            <div class="col s12 m9 l10"><h1>Dashboard</h1>
-                <ul>
-                    <li><span>Dashboard Guiridhari</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="row">
         @if($mytestimonals->count() != 0)
 

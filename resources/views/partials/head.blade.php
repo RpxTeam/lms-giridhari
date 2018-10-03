@@ -3,12 +3,9 @@
     {{ trans('global.global_title') }}
 </title>
 
-<meta http-equiv="X-UA-Compatible"
-      content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0"
-      name="viewport"/>
-<meta http-equiv="Content-type"
-      content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -22,19 +19,23 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <![endif]-->
 
+
+<link rel="stylesheet" href="{{ url('assets') }}/css/classic-light_blue-pink.css">
+
 {{--<link href="{{ url('libs/bootstrap/bootstrap-grid.min.css') }}" rel="stylesheet">--}}
-<link rel="stylesheet" href="{{ url('adminlte/css') }}/select2.min.css"/>
+{{--<link rel="stylesheet" href="{{ url('adminlte/css') }}/select2.min.css"/>--}}
 {{--<link href="{{ url('libs/materialize/materialize.css') }}" rel="stylesheet">--}}
 {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet">--}}
-<link href="{{ url('libs/dashboard/dashboard-icons.css') }}" rel="stylesheet">
-<link href="{{ url('libs/dashboard/dashboard.css') }}" rel="stylesheet">
-@if($generals)
-    @foreach($generals as $general)
-        <link href="{{ url('libs/dashboard/colors/') }}/color-{{$general->theme_color}}.css" rel="stylesheet">
-    @endforeach
-@endif
+{{--<link href="{{ url('libs/dashboard/dashboard-icons.css') }}" rel="stylesheet">--}}
+{{--<link href="{{ url('libs/dashboard/dashboard.css') }}" rel="stylesheet">--}}
+{{--@if($generals)--}}
+    {{--@foreach($generals as $general)--}}
+        {{--<link href="{{ url('libs/dashboard/colors/') }}/color-{{$general->theme_color}}.css" rel="stylesheet">--}}
+    {{--@endforeach--}}
+{{--@endif--}}
 <!-- <link href="{{ url('adminlte/css/AdminLTE.min.css') }}" rel="stylesheet"> -->
 <!-- <link href="{{ url('adminlte/css/skins/skin-blue.min.css') }}" rel="stylesheet"> -->
 {{--<link rel="stylesheet"--}}
@@ -45,9 +46,5 @@
 <!-- <link rel="stylesheet"
       href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css"/> -->
 
-{{--<link href="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css') }}" rel="stylesheet"/>--}}
-<!-- <link href="{{ url('libs/draggable/demo.css') }}" rel="stylesheet"> -->
-<!-- <link href="{{ url('libs/draggable/icons.css') }}" rel="stylesheet"> -->
-<link href="{{ url('libs/draggable/sidebar.css') }}" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<link href="{{ url('custom/admin.css') }}" rel="stylesheet">
+{{--<link href="{{ url('libs/draggable/sidebar.css') }}" rel="stylesheet">--}}
+{{--<link href="{{ url('custom/admin.css') }}" rel="stylesheet">--}}

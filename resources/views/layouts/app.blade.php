@@ -5,37 +5,32 @@
     @include('partials.head')
 </head>
 
+<body class="mdc-typography pace-on">
+@include('partials.loader')
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div id="wrapper">
+    <div class="rpx-wrapper">
 
-@include('partials.topbar')
-@include('partials.sidebar')
-
-    <div class="content-wrap">
-        <!-- Main content -->
-        @if(isset($siteTitle))
-            <h3 class="page-title">
-                {{ $siteTitle }}
-            </h3>
-        @endif
-
-        @if (Session::has('message'))
-            <div class="alert alert-info">
-                <p>{{ Session::get('message') }}</p>
-            </div>
-        @endif
-        @if ($errors->count() > 0)
-            <div class="alert alert-danger">
-                <ul class="list-unstyled">
+        @include('partials.sidebar')
+        <div class="rpx-main">
+            @include('partials.topbar')
+            @if (Session::has('message'))
+                    <div class="alert alert-info">
+                        <p>{{ Session::get('message') }}</p>
+                    </div>
+                @endif
+            @if ($errors->count() > 0)
+                <div class="alert alert-danger">
+                    <ul class="list-unstyled">
                     @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <div class="rpx-main__content mdc-theme--background mdc-theme--text-primary-on-background">
+                @yield('content')
             </div>
-        @endif
-
-        @yield('content')
+        </div>
     </div>
     <div class="search-bar">
         <form action="#!">
@@ -72,9 +67,8 @@
             </div>
         </form>
     </div>
-    <footer>
-        © <?php echo date('Y'); ?> <strong>RPerformance Group</strong>. All rights reserved.
-    </footer>
+
+    @include('partials.rightbar')
 </div>
 
 {!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}
@@ -82,6 +76,6 @@
 {!! Form::close() !!}
 
 
-@include('partials.javascripts')
+@include('partials.scripts')
 </body>
 </html>
