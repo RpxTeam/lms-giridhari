@@ -1,6 +1,8 @@
 @inject('request', 'Illuminate\Http\Request')
 @extends('layouts.app')
 
+@section('title', trans('global.course.title'))
+
 @section('content')
     <div class="page-title">
         <div class="row">

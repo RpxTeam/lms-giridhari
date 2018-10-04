@@ -3,17 +3,14 @@
 @section('title', 'New message')
 
 @section('messenger-content')
-<div class="card">
-	<div class="content">
-        <div class="col-md-12">
-            {!! Form::open(['route' => ['admin.messenger.store'], 'method' => 'POST', 'novalidate', 'class' => 'stepperForm validate']) !!}
+    <div class="mdc-layout-grid__cell--span-10-desktop rpx-email-preview-container">
+        {!! Form::open(['route' => ['admin.messenger.store'], 'method' => 'POST', 'novalidate', 'class' => 'stepperForm validate']) !!}
 
-            @include('admin.messenger.form-partials.fields')
+        @include('admin.messenger.form-partials.fields')
 
-            {!! Form::submit(trans('global.app_save'), ['class' => 'btn waves-effect waves-light white-color']) !!}
-            {!! Form::close() !!}
-        </div>
+        {!! Form::button(trans('global.app_save') . ' <i class="material-icons mdc-button__icon">send</i>', ['class'=>'mdc-button mdc-button--raised', 'type'=>'submit']) !!}
+
+        {!! Form::close() !!}
     </div>
-</div>
 
 @stop

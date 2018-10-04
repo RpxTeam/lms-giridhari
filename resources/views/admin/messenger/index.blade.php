@@ -3,41 +3,29 @@
 @section('title', $title)
 
 @section('messenger-content')
-    <div class="card-panel">
-        <tr class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Subject</th>
-                        <th>Time</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                @forelse($topics as $topic)
-                <tr class="{{$topic->unread()?'unread': 'read'}}">
-                    <td class="mail-contact"><a href="{{ route('admin.messenger.show', [$topic->id]) }}">{{ $topic->otherPerson()->email }}</a></td>
-                    <td class="mail-subject"><a href="{{ route('admin.messenger.show', [$topic->id]) }}">{{ $topic->subject }}</a></td>
-                    <td class="mail-date">{{ $topic->sent_at->diffForHumans() }}</td>
-                    <td>
-                    {!! Form::open(array(
+
+    <div class="mdc-layout-grid__cell--span-10-desktop rpx-email-list-container rpx-hide-scrollbars">
+
+        @forelse($topics as $topic)
+        <a href="{{ route('admin.messenger.show', [$topic->id]) }}" class="mdc-list mdc-list--two-line mdc-list--avatar-list {{$topic->unread()?'unread': 'read'}}">
+            <div class="mdc-list-item rpx-navigation-list">
+                @if($topic->sender->avatar)
+                    <img class="mdc-list-item__graphic" src="{{ url('/assets/images/avatar-1.png') }}" width="56" height="56" alt="Brown Bear">
+                @else
+                    <img class="mdc-list-item__graphic" src="{{ $topic->sender->avatar }}" width="56" height="56" alt="Brown Bear">
+                @endif
+                <span class="mdc-list-item__text">
+                    {{ $topic->otherPerson()->name }}
+                    <span class="mdc-list-item__secondary-text">{{ $topic->subject }}</span>
+                </span>
+                {!! Form::open(array(
                             'style' => 'display: inline-block;',
                             'method' => 'DELETE',
                             'onsubmit' => "return confirm('Are you sure?');",
                             'route' => ['admin.messenger.destroy', $topic->id])) !!}
-                    {!! Form::button('<i class="far fa-trash-alt"></i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
-                    {!! Form::close() !!}
-                    </td>
-                </tr>
-                @empty
-                <tr class="unread">
-                    <td>You have no messages.</td>
-                </tr>
-                @endforelse
-                </tbody>
-            </table>
-        </div>
+                {!! Form::button('<i class="far fa-trash-alt"></i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
+                {!! Form::close() !!}
+        </a>
+        @endforeach
     </div>
-
 @endsection

@@ -34,7 +34,7 @@ class HomeController extends Controller
     {
         
         $users = \App\User::latest()->limit(5)->get(); 
-        $courses = \App\Course::latest()->limit(5)->get(); 
+        $courses = \App\Course::latest()->limit(5)->get();
         $trails = \App\Trail::latest()->limit(5)->get(); 
         $faqquestions = \App\FaqQuestion::latest()->limit(5)->get();
 
@@ -49,6 +49,8 @@ class HomeController extends Controller
         $user = Auth::id();
         $users = \App\User::latest()->limit(5)->get(); 
         $courses = \App\Course::latest()->limit(5)->get(); 
+        $lessons = \App\Lesson::latest()->limit(5)->get();
+        $trailscategories = \App\Trailcategory::latest()->limit(5)->get();
         $trails = \App\Trail::latest()->limit(5)->get();
 
         $faqquestions = \App\FaqQuestion::latest()->limit(5)->get(); 
@@ -87,7 +89,7 @@ class HomeController extends Controller
 
         $generals = \App\General::get();
 
-        return view('home', compact( 'users', 'courses', 'mycourses', 'trails', 'faqquestions', 'certificates', 'mycertificates', 'mytestimonals', 'generals' ));
+        return view('home', compact( 'users', 'courses', 'mycourses', 'trails', 'faqquestions', 'certificates', 'mycertificates', 'mytestimonals', 'lessons', 'trailscategories', 'generals' ));
     }
 
     public function testimonal()

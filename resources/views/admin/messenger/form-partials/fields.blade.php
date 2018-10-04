@@ -7,14 +7,16 @@
         {!! Form::text('receiver', old('receiver', $user ? $user : ''), ['class' => 'form-control', 'disabled']) !!}
     @endif
 </div>
-<div class="input-field">
-    {!! Form::label('subject', 'Subject', ['class' => 'control-label']) !!}
+<div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
+    {!! Form::label('subject', 'Subject', ['class' => 'mdc-floating-label']) !!}
 
     @if(!isset($user))
-        {!! Form::text('subject', old('subject', isset($topic) ? $topic->subject : ''), ['class' => 'form-control']) !!}
+        {!! Form::text('subject', old('subject', isset($topic) ? $topic->subject : ''), ['class' => 'mdc-text-field__input']) !!}
     @else
-        {!! Form::text('subject', old('subject', isset($topic) ? $topic->subject : ''), ['class' => 'form-control', 'disabled']) !!}
+        {!! Form::text('subject', old('subject', isset($topic) ? $topic->subject : ''), ['class' => 'mdc-text-field__input', 'disabled']) !!}
     @endif
+
+    <div class="mdc-line-ripple"></div>
 
     @if ($errors->has('subject'))
         <span class="helper-text" data-error="wrong" data-success="right">
@@ -22,15 +24,16 @@
         </span>
     @endif
 </div>
-<div class="input-field">
-    {!! Form::label('content', 'Message', ['class' => 'control-label']) !!}
-    {!! Form::textarea('content', old('content'), ['class' => 'materialize-textarea']) !!}
-    <span class="helper-text" data-error="wrong" data-success="right"></span>
-    @if($errors->has('content'))
-        <span class="helper-text" data-error="wrong" data-success="right">
-            {{ $errors->first('content') }}
-        </span>
-    @endif
+
+<div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth full-width-textarea-example">
+    {!! Form::textarea('content', old('content'), ['class' => 'mdc-text-field__input', 'id' => 'content']) !!}
+    {!! Form::label('content', 'Message', ['class' => 'mdc-floating-label']) !!}
+    {{--<span class="helper-text" data-error="wrong" data-success="right"></span>--}}
+    {{--@if($errors->has('content'))--}}
+        {{--<span class="helper-text" data-error="wrong" data-success="right">--}}
+            {{--{{ $errors->first('content') }}--}}
+        {{--</span>--}}
+    {{--@endif--}}
 </div>
 @section('javascript')
     @parent

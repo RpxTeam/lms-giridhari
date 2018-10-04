@@ -1,5 +1,6 @@
 
 <!-- initialise material components js -->
+<script src="{{ url('libs') }}/materialize/select.js"></script>
 <script src="{{ url('assets') }}/js/material-components-web.js"></script>
 <script>mdc.autoInit()</script>
 <!-- initialise marquee js -->
@@ -186,6 +187,22 @@
         setTimeout(setupDashboardCharts, 1000);
 
         const body = document.getElementsByTagName('body').item(0);
-        body.addEventListener('portalThemeChanged', setupDashboardCharts);
+        body.addEventListener('rpxThemeChanged', setupDashboardCharts);
+    })();
+
+    (function() {
+        const tfRoot = document.querySelectorAll('.mdc-text-field');
+        for (let i = 0; i < tfRoot.length; i++) {
+            new mdc.textField.MDCTextField(tfRoot[i]);
+        }
+    })();
+
+
+    (function() {
+        const MDCSelect = mdc.select.MDCSelect;
+        const selects = document.querySelectorAll('.mdc-select');
+        for (let i = 0; i < selects.length; i++) {
+            new MDCSelect(selects[i]);
+        }
     })();
 </script>
