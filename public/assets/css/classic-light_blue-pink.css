@@ -8404,7 +8404,8 @@ a.mdc-list-item {
 :root {
   --mdc-theme-primary: #03A9F4;
   --mdc-theme-primary-light: #fff;
-  --mdc-theme-primary-dark: #424242;
+  /*--mdc-theme-primary-dark: #424242;*/
+  --mdc-theme-primary-dark: #ffffff;
   --mdc-theme-secondary: #FF4081;
   --mdc-theme-secondary-light: #ff87b0;
   --mdc-theme-secondary-dark: #f80054;

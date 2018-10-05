@@ -42,5 +42,6 @@
 
 
 @include('partials.scripts')
+@include('partials.javascripts')
 </body>
 </html>

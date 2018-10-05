@@ -1102,7 +1102,7 @@
             },
             button: {
                 tag: 'a',
-                className: 'btn btn-small',
+                className: 'mdc-button mdc-button--small',
                 active: 'active',
                 disabled: 'disabled'
             },

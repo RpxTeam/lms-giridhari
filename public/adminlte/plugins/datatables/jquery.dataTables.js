@@ -14203,8 +14203,8 @@
 		"sNoFooter": "no-footer",
 	
 		/* Paging buttons */
-		"sPageButton": "paginate_button",
-		"sPageButtonActive": "current",
+		"sPageButton": "mdc-button",
+		"sPageButtonActive": "mdc-button--raised",
 		"sPageButtonDisabled": "disabled",
 	
 		/* Striping classes */
@@ -14232,7 +14232,7 @@
 		"sSortColumn": "sorting_", /* Note that an int is postfixed for the sorting order */
 	
 		/* Filtering */
-		"sFilterInput": "",
+		"sFilterInput": "mdc-text-field__input",
 	
 		/* Page length */
 		"sLengthSelect": "",

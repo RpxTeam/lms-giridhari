@@ -7,34 +7,34 @@
     window.printButtonTrans = '{{ trans("global.app_print") }}';
 {{--    window.colvisButtonTrans = '{{ trans("global.app_colvis") }}';--}}
 </script>
-{{--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--}}
-{{--<script src="{{ url('libs') }}/jquery.min.js"></script>--}}
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="{{ url('libs') }}/jquery.min.js"></script>
 {{--<script src="{{ url('libs') }}/materialize/materialize.js"></script>--}}
 <script src="{{ url('adminlte') }}/plugins/datatables/jquery.dataTables.js"></script>
 <script src="{{ url('adminlte') }}/plugins/datatables/extensions/dataTables.buttons.js"></script>
 <script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-{{--<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>--}}
-{{--<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>--}}
-{{--<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>--}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
 {{--<script src="https://cdn.datatables.net/rowreorder/1.2.4/js/dataTables.rowReorder.min.js"></script>--}}
 {{--<script src="{{ url('libs') }}/dataTables.editor.min.js"></script>--}}
-{{--<script src="{{ url('adminlte/js') }}/select2.full.min.js"></script>--}}
-{{--<script src="{{ url('libs') }}/dashboard/dashboard.js"></script>--}}
-{{--<script src="{{ url('adminlte/js') }}/main.js"></script>--}}
-{{--<script src="{{ url('adminlte') }}/plugins/jQueryUI/jquery-ui.js"></script>--}}
-{{--<script src="{{ url('libs') }}/draggable/draggabilly.pkgd.min.js"></script>--}}
-{{--<script src="{{ url('libs') }}/draggable/dragdrop.js"></script>--}}
-{{--<script src="{{ url('libs') }}/toastr.js"></script>--}}
-{{--<script src="{{ url('adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>--}}
-{{--<script src="{{ url('adminlte/plugins/fastclick/fastclick.js') }}"></script>--}}
-{{--<script src="{{ url('adminlte/js/app.min.js') }}"></script>--}}
-{{--<script>--}}
-    {{--window._token = '{{ csrf_token() }}';--}}
-{{--</script>--}}
+<script src="{{ url('adminlte/js') }}/select2.full.min.js"></script>
+<script src="{{ url('libs') }}/dashboard/dashboard.js"></script>
+<script src="{{ url('adminlte/js') }}/main.js"></script>
+<script src="{{ url('adminlte') }}/plugins/jQueryUI/jquery-ui.js"></script>
+<script src="{{ url('libs') }}/draggable/draggabilly.pkgd.min.js"></script>
+<script src="{{ url('libs') }}/draggable/dragdrop.js"></script>
+<script src="{{ url('libs') }}/toastr.js"></script>
+<script src="{{ url('adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ url('adminlte/plugins/fastclick/fastclick.js') }}"></script>
+<script src="{{ url('adminlte/js/app.min.js') }}"></script>
+<script>
+    window._token = '{{ csrf_token() }}';
+</script>
 {{--<script>--}}
     {{--$.extend(true, $.fn.dataTable.defaults, {--}}
         {{--"language": {--}}

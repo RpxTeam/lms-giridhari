@@ -220,6 +220,28 @@ class CoursesController extends Controller
         return view('admin.courses.edit', compact('course', 'instructors', 'lessons', 'categories', 'tags', 'generals'));
     }
 
+
+    /**
+     * Duplicate the form for the Lesson.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function duplicate($id)
+    {
+      if (! Gate::allows('course_access')) {
+        return abort(401);
+      }
+      $course = Course::findOrFail($id);
+      $new_item = $course->replicate();
+      $new_item->save();
+      $new_item->slug = $new_item->slug . '' . $new_item->id;
+      $new_item->save();
+
+      return redirect()->route('admin.courses.index');
+    }
+
     /**
      * Update Course in storage.
      *

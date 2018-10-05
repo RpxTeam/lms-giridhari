@@ -23,7 +23,7 @@
                             'method' => 'DELETE',
                             'onsubmit' => "return confirm('Are you sure?');",
                             'route' => ['admin.messenger.destroy', $topic->id])) !!}
-                {!! Form::button('<i class="far fa-trash-alt"></i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
+                {!! Form::button('<i class="material-icons">delete</i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
                 {!! Form::close() !!}
         </a>
         @endforeach

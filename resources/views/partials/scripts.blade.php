@@ -1,6 +1,6 @@
 
 <!-- initialise material components js -->
-<script src="{{ url('libs') }}/materialize/select.js"></script>
+{{--<script src="{{ url('libs') }}/materialize/select.js"></script>--}}
 <script src="{{ url('assets') }}/js/material-components-web.js"></script>
 <script>mdc.autoInit()</script>
 <!-- initialise marquee js -->

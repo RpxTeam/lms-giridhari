@@ -5,13 +5,23 @@
     @can($gateKey.'edit')
         <a href="{{ route($routeKey.'.edit', $row->id) }}" class="waves-effect waves-light btn-small btn-square blue-text"><i class="material-icons">edit</i></a>
     @endcan
+    @can($gateKey.'access')
+        {!! Form::open(array(
+                'style' => 'display: inline-block;',
+                'method' => 'POST',
+                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                'route' => [$routeKey.'.duplicate', $row->id])) !!}
+
+                {!! Form::button('<i class="far fa-clone"></i>', ['class'=>'btn-square red-text', 'type'=>'submit']) !!}
+        {!! Form::close() !!}
+    @endcan
     @can($gateKey.'delete')
         {!! Form::open(array(
             'style' => 'display: inline-block;',
             'method' => 'DELETE',
             'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
             'route' => [$routeKey.'.destroy', $row->id])) !!}
-                    {!! Form::button('<i class="far fa-trash-alt"></i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
+                    {!! Form::button('<i class="material-icons">delete</i>', ['class'=>'waves-effect waves-light btn-small btn-square red-text', 'type'=>'submit']) !!}
         {!! Form::close() !!}
     @endcan
 </div>
