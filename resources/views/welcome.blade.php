@@ -77,7 +77,7 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="card-content">
                 <div class="title m-b-md">
                     Laravel
                 </div>

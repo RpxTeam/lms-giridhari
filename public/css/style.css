@@ -36,38 +36,38 @@ p {
 
 /* label focus color */
 
-.input-field input[type=text]:focus+label,
-.input-field input[type=email]:focus+label,
-.input-field input[type=password]:focus+label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=text]:focus+label,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=email]:focus+label,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=password]:focus+label {
     color: black!important;
 }
 /* label underline focus color */
 
-.input-field input[type=text]:focus,
-.input-field input[type=email]:focus,
-.input-field input[type=password]:focus {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=text]:focus,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=email]:focus,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=password]:focus {
     border-bottom: 1px solid black!important;
     box-shadow: 0 1px 0 0 black!important;
 }
 /* valid color */
 
-.input-field input[type=text].valid,
-.input-field input[type=email].valid,
-.input-field input[type=password].valid {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=text].valid,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=email].valid,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=password].valid {
     border-bottom: 1px solid black!important;
     box-shadow: 0 1px 0 0 black!important;
 }
 /* invalid color */
 
-.input-field input[type=text].invalid,
-.input-field input[type=email].invalid,
-.input-field input[type=password].invalid {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=text].invalid,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=email].invalid,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=password].invalid {
     border-bottom: 1px solid black!important;
     box-shadow: 0 1px 0 0 black!important;
 }
 /* icon prefix focus color */
 
-.input-field .prefix.active {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix.active {
     color: black!important;
 }
 .modal {

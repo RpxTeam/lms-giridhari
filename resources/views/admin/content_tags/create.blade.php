@@ -32,15 +32,15 @@
             <h5>@lang('global.app_create')</h5>
         </div>
         
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     {!! Form::label('title', trans('global.content-tags.fields.title').'') !!}
                     {!! Form::text('title', old('title'), ['class' => 'validate']) !!}
                     <span class="helper-text" data-error="@if($errors->has('title')){{ $errors->first('title') }}@endif" data-success="right"></span>
                 </div>
 
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     {!! Form::label('slug', trans('global.content-tags.fields.slug').'') !!}
                     {!! Form::text('slug', old('slug'), ['class' => 'validate']) !!}
                     <span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>

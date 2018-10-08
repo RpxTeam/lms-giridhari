@@ -37,18 +37,18 @@
             <h5>@lang('global.app_edit')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('title', trans('global.trailtags.fields.title').'') !!}
                         {!! Form::text('title', old('title'), ['class' => 'form-control']) !!}
                         <span class="helper-text" data-error="@if($errors->has('title')){{ $errors->first('title') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('slug', trans('global.trailtags.fields.slug').'') !!}
                         {!! Form::text('slug', old('slug'), ['class' => 'form-control']) !!}
                         <span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>

@@ -30,9 +30,9 @@
             <h5>@lang('global.app_view')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     <table class="bordered striped">
                         <tr>
                             <th>@lang('global.datalesson.fields.view')</th>

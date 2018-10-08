@@ -18,7 +18,7 @@
                         
                         <div class="card">
                             <div class="title">{{ ucfirst(config('app.name')) }} @lang('global.app_login')</div>
-                            <div class="content">
+                            <div class="card-content">
                                 @if (count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <strong>Whoops!</strong> @lang('global.app_there_were_problems_with_input'):
@@ -119,7 +119,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="row">
-                            <div class="input-field">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
                                     <label for="email">
                                         Email
@@ -129,7 +129,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                 <input id="password" type="password" class="form-control" name="password">
                                     <label for="password">
                                         Password

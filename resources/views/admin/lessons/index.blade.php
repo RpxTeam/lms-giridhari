@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <ul id="view" class="view list-view">
                 @if (count($lessons) > 0)
                 @foreach ($lessons as $lesson)

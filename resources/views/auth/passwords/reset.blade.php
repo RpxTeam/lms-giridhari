@@ -5,7 +5,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="title">@lang('global.app_reset_password')</div>
-                <div class="content">
+                <div class="card-content">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             @lang('global.app_reset_password_woops')

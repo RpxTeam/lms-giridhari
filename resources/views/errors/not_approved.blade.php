@@ -66,7 +66,7 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    <div class="content">
+    <div class="card-content">
         <div class="title m-b-md">
             @lang('global.app_not_approved_title')
         </div>

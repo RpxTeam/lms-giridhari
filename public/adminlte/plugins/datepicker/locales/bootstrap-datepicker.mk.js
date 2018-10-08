@@ -1,5 +1,5 @@
 /**
- * Macedonian translation for bootstrap-datepicker
+ * Macedonian translation for bootstrap-rpx-
  * Marko Aleksic <psybaron@gmail.com>
  */
 ;(function($){

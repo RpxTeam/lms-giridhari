@@ -32,7 +32,7 @@
                         {{ csrf_field() }}
 
                         <div class="row">
-                            <div class="input-field{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth{{ $errors->has('name') ? ' has-error' : '' }}">
                                
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                     <label for="name">@lang('global.app_name')</label>
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth{{ $errors->has('email') ? ' has-error' : '' }}">
                                 
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                     <label for="email">@lang('global.app_email')</label>
@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth{{ $errors->has('password') ? ' has-error' : '' }}">
                                 
                                 <input id="password" type="password" class="form-control" name="password" required>
                                     <label for="password">@lang('global.app_password')</label>
@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                 <label for="password-confirm">@lang('global.app_confirm_password')</label>
                                 </input>
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="input-field">
+                            <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                 
                                 <button type="submit" class="btn waves-effect waves-light black">
                                     @lang('global.app_register')

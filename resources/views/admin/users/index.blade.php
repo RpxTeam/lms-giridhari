@@ -29,7 +29,7 @@
         <div class="title">
             <h3>@lang('global.app_list')</h3>
         </div>
-        <div class="content">
+        <div class="card-content">
             <table class="vertical-scroll table table-striped ajaxTable no-order @can('user_delete') dt-select @else dt-show @endcan">
                 <thead>
                     <tr>

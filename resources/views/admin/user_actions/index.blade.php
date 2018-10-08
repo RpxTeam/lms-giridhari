@@ -23,7 +23,7 @@
             <h3>@lang('global.app_list')</h3>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <table class="striped responsive-table {{ count($user_actions) > 0 ? 'datatable' : '' }} ">
                 <thead>
                     <tr>

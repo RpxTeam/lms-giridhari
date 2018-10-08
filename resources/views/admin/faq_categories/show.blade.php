@@ -30,7 +30,7 @@
             <h5>@lang('global.app_view')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col s6">
                     <table class="table bordered striped">
@@ -49,7 +49,7 @@
                 <li class="tab grey-text"><a class="grey-text" href="#faq_questions" aria-controls="faq_questions">Questions</a></li>
             </ul>
         </div>
-        <div class="content">
+        <div class="card-content">
             
             <div class="active" id="faq_questions">
                 <table class="striped responsive-table {{ count($faq_questions) > 0 ? 'datatable' : '' }}">

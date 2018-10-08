@@ -126,7 +126,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="row">
-                                <div class="input-field">
+                                <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
                                         <label for="email">
                                             Email
@@ -136,7 +136,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="input-field">
+                                <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                     <input id="password" type="password" class="form-control" name="password">
                                         <label for="password">
                                             Password

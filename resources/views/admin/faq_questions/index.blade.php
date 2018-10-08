@@ -30,7 +30,7 @@
             <h3>@lang('global.app_list')</h3>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <table class="no-order table table-striped ajaxTable @can('faq_question_delete') dt-select @else dt-show @endcan">
                 <thead>
                     <tr>

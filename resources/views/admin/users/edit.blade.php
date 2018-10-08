@@ -32,50 +32,50 @@
             <h5>@lang('global.app_editor')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('name', trans('global.users.fields.name').'*') !!}
                         {!! Form::text('name', old('name'), ['class' => 'validate', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('name')){{ $errors->first('name') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('lastname', trans('global.users.fields.lastname').'') !!}
                         {!! Form::text('lastname', old('lastname'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('lastname')){{ $errors->first('lastname') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('website', trans('global.users.fields.website').'') !!}
                         {!! Form::text('website', old('website'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('website')){{ $errors->first('website') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('email', trans('global.users.fields.email').'*') !!}
                         {!! Form::email('email', old('email'), ['class' => 'validate', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('email')){{ $errors->first('email') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('password', trans('global.users.fields.password').'*') !!}
                         {!! Form::password('password', ['class' => 'validate', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('password')){{ $errors->first('password') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="file-field input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="file-field mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         <div class="btn grey">
                             <span>File</span>
                             {!! Form::file('avatar') !!}
@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     <div class="col s12" style="position: relative;">
                         {!! Form::label('role', trans('global.users.fields.role').'*') !!}
                         {!! Form::select('role[]', $roles, old('role'), ['class' => 'select2', 'multiple' => 'multiple', 'id' => 'selectall-role' , 'required' => '']) !!}
@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     {!! Form::label('team_id', trans('global.users.fields.team').'') !!}
                     {!! Form::select('team_id', $teams, old('team_id'), ['label' => 'Please Select']) !!}
                     <span class="helper-text" data-error="@if($errors->has('team_id')){$errors->first('approved') }}@endif" data-success="right"></span>

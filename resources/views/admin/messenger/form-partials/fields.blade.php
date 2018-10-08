@@ -1,4 +1,4 @@
-<div class=input-field">
+<div class=mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
     {!! Form::label('receiver', 'Recipient', ['class' => 'control-label']) !!}
 
     @if(isset($users))

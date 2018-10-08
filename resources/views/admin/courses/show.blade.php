@@ -1,125 +1,130 @@
 @extends('layouts.app')
 
+@section('title', trans('global.course.title'))
+
 @section('content')
     <div class="page-title">
-        <div class="row">
-            <div class="col s12 m9 l10"><h1>@lang('global.courses.title')</h1>
-                <ul>
-                    <li>
-                        <a href="{{ url('/admin/home') }}">
-                            <i class="fa fa-home"></i>
-                            Dashboard</a>
-                    </li> /
-                    <li>
-                        <a href="{{ route('admin.courses.index') }}">
-                            @lang('global.courses.title')</a>
-                    </li> /
-                    <li><span>{{ $course->order }}</span></li>
-                </ul>
-            </div>
-            <div class="col s12 m3 l2 right-align">
-                <a href="{{ route('admin.courses.index') }}" class="btn lighten-3 z-depth-0 chat-toggle">
-                    @lang('global.app_back_to_list')
-                </a>
-            </div>
-        </div>
+        <ul class="breadcrumb">
+            <li>
+                <a href="{{ url('/admin/home') }}">
+                    <i class="fa fa-home"></i>
+                    Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.courses.index') }}">@lang('global.courses.title')</a>
+            </li>
+            <li><span>{{ $course->title }}</span></li>
+        </ul>
+        @can('course_create')
+            <a href="{{ route('admin.courses.index') }}" class="mdc-button mdc-button--stroked">
+                @lang('global.app_back_to_list')
+            </a>
+        @endcan
     </div>
 
-    <div class="card">
-        <div class="title">
-            <h5>@lang('global.app_view')</h5>
-        </div>
+    <div class="rpx-content">
+        <div class="card">
+            <div class="title">
+                <h2 class="mdc-typography--display1">@lang('global.app_view')</h2>
+            </div>
 
-        <div class="content">
-            <div class="row">
-                <div class="col s6">
-                    <table class="bordered striped">
-                        <tr>
-                            <th>@lang('global.courses.fields.order')</th>
-                            <td field-key='order'>{{ $course->order }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.title')</th>
-                            <td field-key='title'>{{ $course->title }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.slug')</th>
-                            <td field-key='slug'>{{ $course->slug }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.description')</th>
-                            <td field-key='description'>{!! $course->description !!}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.introduction')</th>
-                            <td field-key='introduction'>{!! $course->introduction !!}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.featured-image')</th>
-                            <td field-key='featured_image'>@if($course->featured_image)
-                                    <a href="{{ asset(env('UPLOAD_PATH').'/' . $course->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $course->featured_image) }}"/></a>@endif</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.instructor')</th>
-                            <td field-key='instructor'>
-                                @foreach ($course->instructor as $singleInstructor)
-                                    <span class="label label-info label-many">{{ $singleInstructor->name }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.lessons')</th>
-                            <td field-key='lessons'>
-                                @foreach ($course->lessons as $singleLessons)
-                                    <span class="label label-info label-many">{{ $singleLessons->title }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.duration')</th>
-                            <td field-key='duration'>{{ $course->duration }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.start-date')</th>
-                            <td field-key='start_date'>{{ $course->start_date }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.end-date')</th>
-                            <td field-key='end_date'>{{ $course->end_date }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.categories')</th>
-                            <td field-key='categories'>
-                                @foreach ($course->categories as $singleCategories)
-                                    <span class="label label-info label-many">{{ $singleCategories->title }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.tags')</th>
-                            <td field-key='tags'>
-                                @foreach ($course->tags as $singleTags)
-                                    <span class="label label-info label-many">{{ $singleTags->title }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.courses.fields.approved')</th>
-                            <td field-key='approved'>{{ Form::checkbox("approved", 1, $course->approved == 1 ? true : false, ["disabled"]) }}</td>
-                        </tr>
-                    </table>
+            <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                <div class="mdc-card rpx-widget__card mdc-card--rpx-fullheight mdc-card--rpx-space-between">
+                    <div class="rpx-clients-table">
+                        <table class="mdl-data-table rpx-table-tab-panel rpx-table-tab-panel--active">
+                            <tbody>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.order')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='order'>{{ $course->order }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.title')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='title'>{{ $course->title }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.slug')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='slug'>{{ $course->slug }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.description')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='description'>{!! $course->description !!}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.introduction')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='introduction'>{!! $course->introduction !!}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.featured-image')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='featured_image'>@if($course->featured_image)
+                                            <a href="{{ asset(env('UPLOAD_PATH').'/' . $course->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $course->featured_image) }}"/></a>@endif</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.instructor')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='instructor'>
+                                        @foreach ($course->instructor as $singleInstructor)
+                                            <span class="label label-info label-many">{{ $singleInstructor->name }}</span>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.lessons')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='lessons'>
+                                        @foreach ($course->lessons as $singleLessons)
+                                            <span class="label label-info label-many">{{ $singleLessons->title }}</span>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.duration')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='duration'>{{ $course->duration }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.start-date')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='start_date'>{{ $course->start_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.end-date')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='end_date'>{{ $course->end_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.categories')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='categories'>
+                                        @foreach ($course->categories as $singleCategories)
+                                            <span class="label label-info label-many">{{ $singleCategories->title }}</span>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.tags')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='tags'>
+                                        @foreach ($course->tags as $singleTags)
+                                            <span class="label label-info label-many">{{ $singleTags->title }}</span>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="">@lang('global.courses.fields.approved')</th>
+                                    <td class="mdl-data-table__cell--non-numeric" field-key='approved'>@if($course->approved) Yes @else No @endif</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="card">
 
-        <div class="content">
+        <div class="card-content">
             <div class="card-tabs">
-                <ul class="tabs">
-                    <li class="tab active"><a href="#datacourse">Data Course</a></li>
-                    <li class="tab"><a href="#trails">Trails</a></li>
-                </ul>
+
+            <nav id="top-example-tab-bar" class="mdc-tab-bar" role="tablist">
+                <a class="mdc-tab mdc-tab--active">Data Course</a>
+                <a class="mdc-tab">Trails</a>
+                <span class="mdc-tab-bar__indicator"></span>
+            </nav>
+
             </div>
             <div class="active" id="datacourse">
                 <table class="striped responsive-table {{ count($datacourses) > 0 ? 'datatable' : '' }}">
@@ -315,6 +320,28 @@
                     filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
             });
         });
+    </script>
+
+    <script>
+
+        (function() {
+            // Tab bar with scroller example.
+            const tabBarScroller = new mdc.tabs.MDCTabBarScroller(document.querySelector('#tab-bar-scroller'));
+            tabBarScroller.layout();
+            tabBarScroller.tabBar.layout();
+            // Icon & text labels example.
+            const iconTextTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#icon-text-tab-bar'));
+            iconTextTabBar.layout();
+
+            // Listens to direction change to relayout tabs(for RTL).
+            const body = document.getElementsByTagName('body').item(0);
+            body.addEventListener('portalDirectionChanged', function () {
+                basicTabBar.layout();
+                tabBarScroller.layout();
+                tabBarScroller.tabBar.layout();
+                iconTextTabBar.layout();
+            });
+        })();
     </script>
 
     <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>

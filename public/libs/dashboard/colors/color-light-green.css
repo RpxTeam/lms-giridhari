@@ -5218,25 +5218,25 @@ nav ul a:hover, nav ul .sp-cancel:hover {
     background-color: rgba(0, 0, 0, 0.1); }
 nav ul.left {
     float: left; }
-nav .input-field {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth {
     margin: 0; }
-nav .input-field input {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input {
     height: 100%;
     font-size: 1.2rem;
     border: none;
     padding-left: 2rem; }
-nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .input-field input[type=password]:valid, nav .input-field input[type=email]:valid, nav .input-field input[type=url]:valid, nav .input-field input[type=date]:valid {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input:focus, nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=text]:valid, nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=password]:valid, nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=email]:valid, nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=url]:valid, nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=date]:valid {
     border: none;
     box-shadow: none; }
-nav .input-field label {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label {
     top: 0;
     left: 0; }
-nav .input-field label i {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label i {
     color: rgba(255, 255, 255, 0.7);
     transition: color .3s; }
-nav .input-field label.active i {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label.active i {
     color: #fff; }
-nav .input-field label.active {
+nav .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label.active {
     -ms-transform: translateY(0);
     transform: translateY(0); }
 
@@ -6347,10 +6347,10 @@ textarea.materialize-textarea + label:after {
     opacity: 0;
     transition: .2s opacity ease-out, .2s color ease-out; }
 
-.input-field {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth {
     position: relative;
     margin-top: 1rem; }
-.input-field label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label {
     color: #9e9e9e;
     position: absolute;
     top: 0.8rem;
@@ -6358,53 +6358,53 @@ textarea.materialize-textarea + label:after {
     font-size: 1rem;
     cursor: text;
     transition: .2s ease-out; }
-.input-field label.active {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label.active {
     font-size: 0.8rem;
     -ms-transform: translateY(-140%);
     transform: translateY(-140%); }
-.input-field .prefix {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix {
     position: absolute;
     width: 3rem;
     font-size: 2rem;
     transition: color .2s; }
-.input-field .prefix.active {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix.active {
     color: #9ccc65; }
-.input-field .prefix ~ input,
-.input-field .prefix ~ textarea {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ textarea {
     margin-left: 3rem;
     width: 92%;
     width: calc(100% - 3rem); }
-.input-field .prefix ~ textarea {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ textarea {
     padding-top: .8rem; }
-.input-field .prefix ~ label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ label {
     margin-left: 3rem; }
 @media only screen and (max-width: 992px) {
-    .input-field .prefix ~ input {
+    .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input {
         width: 86%;
         width: calc(100% - 3rem); } }
 @media only screen and (max-width: 767px) {
-    .input-field .prefix ~ input {
+    .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input {
         width: 80%;
         width: calc(100% - 3rem); } }
 
-.input-field input[type=search] {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search] {
     display: block;
     line-height: inherit;
     padding-left: 4rem;
     width: calc(100% - 4rem); }
-.input-field input[type=search]:focus {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search]:focus {
     background-color: #fff;
     border: 0;
     box-shadow: none;
     color: #444; }
-.input-field input[type=search]:focus + label i,
-.input-field input[type=search]:focus ~ .mdi-navigation-close,
-.input-field input[type=search]:focus ~ .material-icons {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search]:focus + label i,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search]:focus ~ .mdi-navigation-close,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search]:focus ~ .material-icons {
     color: #444; }
-.input-field input[type=search] + label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search] + label {
     left: 1rem; }
-.input-field input[type=search] ~ .mdi-navigation-close,
-.input-field input[type=search] ~ .material-icons {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search] ~ .mdi-navigation-close,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input[type=search] ~ .material-icons {
     position: absolute;
     top: 0;
     right: 1rem;
@@ -9572,30 +9572,30 @@ html.rtl .yaybar.yay-light .nano-content > ul > li > ul > li > ul > li > ul > li
 @media only screen and (max-width: 992px) {
     .search-bar > .layer-content .search-bar-toggle {
         right: 1rem; } }
-.search-bar > .layer-content .input-field {
+.search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth {
     margin-top: 4rem;
     margin-bottom: 4rem; }
-.search-bar > .layer-content .input-field .prefix {
+.search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix {
     text-align: center;
     font-size: 5rem;
     width: 5rem; }
-.search-bar > .layer-content .input-field .prefix ~ input {
+.search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input {
     margin-left: 6rem;
     width: 91%;
     width: calc(100% - 6rem); }
-.search-bar > .layer-content .input-field input {
+.search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input {
     font-size: 5rem;
     height: 7rem;
     margin: 0 0 20px; }
 @media only screen and (max-width: 992px) {
-    .search-bar > .layer-content .input-field .prefix {
+    .search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix {
         font-size: 3rem;
         width: 3rem; }
-    .search-bar > .layer-content .input-field .prefix ~ input {
+    .search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input {
         margin-left: 4rem;
         width: 91%;
         width: calc(100% - 4rem); }
-    .search-bar > .layer-content .input-field input {
+    .search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input {
         font-size: 3rem;
         height: 4rem;
         margin: 0 0 20px; } }
@@ -10006,10 +10006,10 @@ html.rtl .yaybar.yay-light .nano-content > ul > li > ul > li > ul > li > ul > li
     height: 65px;
     padding: 0 8px;
     background: #2d2f40; }
-.chat .messages .send .input-field {
+.chat .messages .send .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth {
     margin-top: 8px;
     margin-right: 65px; }
-.chat .messages .send .input-field input {
+.chat .messages .send .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input {
     color: #fff;
     margin: 0;
     height: 2.7rem;
@@ -10063,18 +10063,18 @@ html.rtl .yaybar.yay-light .nano-content > ul > li > ul > li > ul > li > ul > li
 
 .chat.chat-light .messages .send {
     background: whitesmoke; }
-.chat.chat-light .messages .send .input-field input {
+.chat.chat-light .messages .send .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth input {
     color: inherit; }
 
 /* Input Align */
-.input-field > input,
-.input-field > textarea {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth > input,
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth > textarea {
     text-align: inherit; }
 
-.input-field.align-right label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth.align-right label {
     right: .65rem; }
 
-.input-field.align-center label {
+.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth.align-center label {
     width: 100%; }
 
 /* Select Align */
@@ -11413,7 +11413,7 @@ table.dataTable.no-footer {
     height: 40px;
     line-height: 40px; }
 
-#forgot-password .input-field {
+#forgot-password .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth {
     margin-top: 0; }
 
 #lock img {
@@ -11741,12 +11741,12 @@ table.dataTable.no-footer {
 
 .ecommerce-settings .select-wrapper,
 .ecommerce-settings .select-wrapper > input,
-.ecommerce-settings .input-field,
-.ecommerce-settings .input-field > input,
+.ecommerce-settings .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth,
+.ecommerce-settings .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth > input,
 .ecommerce-order-single .select-wrapper,
 .ecommerce-order-single .select-wrapper > input,
-.ecommerce-order-single .input-field,
-.ecommerce-order-single .input-field > input {
+.ecommerce-order-single .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth,
+.ecommerce-order-single .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth > input {
     margin-top: 0;
     margin-bottom: 0; }
 
@@ -13976,7 +13976,7 @@ html.rtl .search-bar > .layer-content .search-results .each-result img {
     margin-left: 1rem;
     margin-right: 0; }
 
-html.rtl .search-bar > .layer-content .input-field .prefix ~ input {
+html.rtl .search-bar > .layer-content .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input {
     margin-right: 6rem;
     margin-left: 0; }
 
@@ -14125,13 +14125,13 @@ html.rtl .dropdown-content li {
         left: 20px;
         right: auto; } }
 
-html.rtl .input-field label {
+html.rtl .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth label {
     right: .65rem;
     left: auto; }
 
-html.rtl .input-field .prefix ~ input,
-html.rtl .input-field .prefix ~ textarea,
-html.rtl .input-field .prefix ~ label {
+html.rtl .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ input,
+html.rtl .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ textarea,
+html.rtl .mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth .prefix ~ label {
     margin-right: 3rem;
     margin-left: 0; }
 

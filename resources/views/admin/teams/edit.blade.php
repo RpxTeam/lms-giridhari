@@ -31,9 +31,9 @@
             <h5>@lang('global.app_edit')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     {!! Form::label('name', trans('global.teams.fields.name').'*') !!}
                     {!! Form::text('name', old('name'), ['class' => 'validate', 'required' => '']) !!}
                     <span class="helper-text" data-error="@if($errors->has('name')){{ $errors->first('name') }}@endif" data-success="right"></span>

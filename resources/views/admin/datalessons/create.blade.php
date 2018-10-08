@@ -32,10 +32,10 @@
             <h5>@lang('global.app_create')</h5>
         </div>
         
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col s12 m6">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('view', trans('global.datalesson.fields.view').'') !!}
                         {!! Form::number('view', old('view'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('view')){{ $errors->first('view') }}@endif" data-success="right"></span>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col s12 m6">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('progress', trans('global.datalesson.fields.progress').'') !!}
                         {!! Form::number('progress', old('progress'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('progress')){{ $errors->first('progress') }}@endif" data-success="right"></span>

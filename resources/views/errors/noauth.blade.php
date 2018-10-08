@@ -39,7 +39,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+            <div class="card-content">
                 <div class="title">No permission.</div>
             </div>
         </div>

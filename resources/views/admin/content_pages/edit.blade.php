@@ -31,17 +31,17 @@
             <h5>@lang('global.app_create')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('title', trans('global.content-pages.fields.title').'*') !!}
                         {!! Form::text('title', old('title'), ['class' => 'validate', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('title')){{ $errors->first('title') }}@endif" data-success="right"></span>
                     </div>
                 </div>
-                <div class="col m6 s12">
-                    <div class="file-field input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="file-field mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         <div class="btn grey">
                             <span>File</span>
                             {!! Form::file('featured_image') !!}
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     <div class="col l12" style="position: relative;"
                     {!! Form::label('category_id', trans('global.content-pages.fields.category-id').'') !!}
                     {!! Form::select('category_id[]', $category_ids, old('category_id'), ['class' => 'select2', 'multiple' => 'multiple', 'id' => 'selectall-category_id' ]) !!}
@@ -73,7 +73,7 @@
                 </div>
                 <span class="helper-text" data-error="@if($errors->has('category_id')){{ $errors->first('category_id') }}@endif" data-success="right"></span>
             </div>
-            <div class="col m6 s12">
+            <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                 <div class="col s12" style="position: relative;">
                     {!! Form::label('tag_id', trans('global.content-pages.fields.tag-id').'') !!}
                     {!! Form::select('tag_id[]', $tag_ids, old('tag_id'), ['class' => 'select2', 'multiple' => 'multiple', 'id' => 'selectall-tag_id' ]) !!}
@@ -95,7 +95,7 @@
 
         <div class="row">
             <div class="col s12">
-                <div class="input-field">
+                <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                     {!! Form::label('excerpt', trans('global.content-pages.fields.excerpt').'') !!}
                     {!! Form::textarea('excerpt', old('excerpt'), ['class' => 'materialize-textarea']) !!}
                     <span class="helper-text" data-error="@if($errors->has('excerpt')){{ $errors->first('excerpt') }}@endif" data-success="right"></span>

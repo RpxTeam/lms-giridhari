@@ -30,7 +30,7 @@
             <h5>@lang('global.app_view')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col s6">
                     <table class="table table-striped">
@@ -62,7 +62,7 @@
             </ul>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             
             <div class="active" id="datacourse">
                 <table class="striped responsive-table {{ count($datacourses) > 0 ? 'datatable' : '' }}">

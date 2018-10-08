@@ -32,20 +32,20 @@
             <h5>@lang('global.app_edit')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('site_name', trans('global.general.fields.site-name').'') !!}
                         {!! Form::text('site_name', old('site_name'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('site_name')){{ $errors->first('site_name') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     <div class="row">
                         <div class="col-12 no-padding">
-                            <div class="file-field input-field">
+                            <div class="file-field mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                                 <div class="btn grey">
                                     <span>File</span>
                                     {!! Form::file('site_logo') !!}

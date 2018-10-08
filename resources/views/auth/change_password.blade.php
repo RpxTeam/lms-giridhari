@@ -18,9 +18,9 @@
 				@lang('global.app_edit')
 			</div>
 
-			<div class="content">
+			<div class="card-content">
 				<div class="row">
-					<div class="col m6 s12">
+					<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
 						{!! Form::label('current_password', trans('global.app_current_password'), ['class' => 'control-label']) !!}
 						{!! Form::password('current_password', ['class' => 'validate']) !!}
 						<span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>
@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="row">
-					<div class="col m6 s12">
+					<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
 						{!! Form::label('new_password', trans('global.app_new_password'), ['class' => 'control-label']) !!}
 						{!! Form::password('new_password', ['class' => 'validate']) !!}
 						<span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>
@@ -46,7 +46,7 @@
 				</div>
 
 				<div class="row">
-					<div class="col m6 s12">
+					<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
 						{!! Form::label('new_password_confirmation', trans('global.app_password_confirm'), ['class' => 'control-label']) !!}
 						{!! Form::password('new_password_confirmation', ['class' => 'validate']) !!}
 						<span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>

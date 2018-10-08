@@ -31,10 +31,10 @@
             <h5>@lang('global.app_editor')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col m1 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('order', trans('global.trails.fields.order').'') !!}
                         {!! Form::text('order', old('order'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('order')){{ $errors->first('order') }}@endif" data-success="right"></span>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="col m7 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('title', trans('global.trails.fields.title').'') !!}
                         {!! Form::text('title', old('title'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('title')){{ $errors->first('title') }}@endif" data-success="right"></span>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('slug', trans('global.trails.fields.slug').'') !!}
                         {!! Form::text('slug', old('slug'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('slug')){{ $errors->first('slug') }}@endif" data-success="right"></span>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="col s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('description', trans('global.trails.fields.description').'') !!}
                         {!! Form::textarea('description', old('description'), ['class' => 'form-control materialize-textarea', 'placeholder' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('description')){{ $errors->first('description') }}@endif" data-success="right"></span>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('start_date', trans('global.trails.fields.start-date').'') !!}
                         {!! Form::text('start_date', old('start_date'), ['class' => 'datepicker']) !!}
                         <span class="helper-text" data-error="@if($errors->has('start_date')){{ $errors->first('start_date') }}@endif" data-success="right"></span>
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('end_date', trans('global.trails.fields.end-date').'') !!}
                         {!! Form::text('end_date', old('end_date'), ['class' => 'datepicker']) !!}
                         <span class="helper-text" data-error="@if($errors->has('end_date')){{ $errors->first('end_date') }}@endif" data-success="right"></span>

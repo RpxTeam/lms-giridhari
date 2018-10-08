@@ -39,7 +39,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+            <div class="card-content">
                 <div class="title">Be right back.</div>
             </div>
         </div>

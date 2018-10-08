@@ -30,7 +30,7 @@
             <h5>@lang('global.app_view')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col s6">
                     <table class="striped responsive-table">
@@ -55,7 +55,7 @@
             </ul>
         </div>
         <!-- Tab panes -->
-        <div class="content">
+        <div class="card-content">
             
             <div class="active" id="trails">
                 <table class="striped responsive-table {{ count($trails) > 0 ? 'datatable' : '' }}">

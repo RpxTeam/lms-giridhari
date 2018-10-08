@@ -9,7 +9,7 @@
 </script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="{{ url('libs') }}/jquery.min.js"></script>
-{{--<script src="{{ url('libs') }}/materialize/materialize.js"></script>--}}
+<script src="{{ url('libs') }}/materialize/materialize.js"></script>
 <script src="{{ url('adminlte') }}/plugins/datatables/jquery.dataTables.js"></script>
 <script src="{{ url('adminlte') }}/plugins/datatables/extensions/dataTables.buttons.js"></script>
 <script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>

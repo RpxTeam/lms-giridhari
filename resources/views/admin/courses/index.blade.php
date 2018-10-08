@@ -21,15 +21,15 @@
     </div>
 
     <div class="rpx-content">
-        <nav class="mdc-list portal-navigation-list rpx-tabs-externs">
-            <a href="{{ route('admin.courses.index') }}" class="portal-navigation-list__item mdc-list-item {{ request('show_deleted') == 1 ? '' : 'active' }}">
-                <span class="portal-navigation-list__text">
+        <nav class="mdc-list rpx-navigation-list rpx-tabs-externs">
+            <a href="{{ route('admin.courses.index') }}" class="rpx-navigation-list__item mdc-list-item {{ request('show_deleted') == 1 ? '' : 'active' }}">
+                <span class="rpx-navigation-list__text">
                     @lang('global.app_all')
                 </span>
             </a>
 
-            <a href="{{ route('admin.courses.index') }}?show_deleted=1" class="portal-navigation-list__item mdc-list-item {{ request('show_deleted') == 1 ? 'active' : '' }}">
-                <span class="portal-navigation-list__text">
+            <a href="{{ route('admin.courses.index') }}?show_deleted=1" class="rpx-navigation-list__item mdc-list-item {{ request('show_deleted') == 1 ? 'active' : '' }}">
+                <span class="rpx-navigation-list__text">
                     @lang('global.app_trash')
                 </span>
             </a>
@@ -40,7 +40,7 @@
                 <h3>@lang('global.app_list')</h3>
             </div>
 
-            <div class="content">
+            <div class="card-content">
                 <table class="table table-striped responsive-table no-order dataTable ajaxTable @can('course_delete') @if ( request('show_deleted') != 1 ) dt-select @else dt-show @endif @endcan" style="width: 100%;">
                     <thead>
                         <tr>

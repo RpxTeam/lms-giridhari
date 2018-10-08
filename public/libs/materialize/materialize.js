@@ -6472,7 +6472,7 @@ $jscomp.polyfill = function (e, r, p, m) {
             _this37.count = 0;
             _this37.activeIndex = -1;
             _this37.oldVal;
-            _this37.$inputField = _this37.$el.closest('.input-field');
+            _this37.$inputField = _this37.$el.closest('.mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth');
             _this37.$active = $();
             _this37._mousedown = false;
             _this37._setupDropdown();
@@ -7655,7 +7655,7 @@ $jscomp.polyfill = function (e, r, p, m) {
              */
             _this45.options = $.extend({}, Chips.defaults, options);
 
-            _this45.$el.addClass('chips input-field');
+            _this45.$el.addClass('chips mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth');
             _this45.chipsData = [];
             _this45.$chips = $();
             _this45._setupInput();

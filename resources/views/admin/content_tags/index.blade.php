@@ -30,7 +30,7 @@
             <h3>@lang('global.app_list')</h3>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <table class="table table-striped no-order dataTable {{ count($content_tags) > 0 ? 'datatable' : '' }} @can('content_tag_delete') dt-select @else dt-show @endcan">
                 <thead>
                     <tr>

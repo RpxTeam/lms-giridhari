@@ -14,12 +14,13 @@
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
 <!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <![endif]-->
 
 
@@ -31,7 +32,7 @@
 <link rel="stylesheet" href="{{ url('custom') }}/admin.css">
 
 {{--<link href="{{ url('libs/bootstrap/bootstrap-grid.min.css') }}" rel="stylesheet">--}}
-{{--<link rel="stylesheet" href="{{ url('adminlte/css') }}/select2.min.css"/>--}}
+<link rel="stylesheet" href="{{ url('adminlte/css') }}/select2.min.css"/>
 {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet">--}}
 {{--<link href="{{ url('libs/dashboard/dashboard-icons.css') }}" rel="stylesheet">--}}
 {{--<link href="{{ url('libs/dashboard/dashboard.css') }}" rel="stylesheet">--}}

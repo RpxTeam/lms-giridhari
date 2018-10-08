@@ -32,9 +32,9 @@
             <h5>@lang('global.app_create')</h5>
         </div>
         
-        <div class="content">
+        <div class="card-content">
             <div class="row">
-                <div class="col m6 s12">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
                     {!! Form::label('category_id', trans('global.faq-questions.fields.category').'*') !!}
                     {!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control', 'required' => '']) !!}
                     <span class="helper-text" data-error="@if($errors->has('category_id')){{ $errors->first('category_id') }}@endif" data-success="right"></span>
@@ -42,16 +42,16 @@
 
             </div>
             <div class="row">
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('answer_text', trans('global.faq-questions.fields.answer-text').'*') !!}
                         {!! Form::textarea('answer_text', old('answer_text'), ['class' => 'materialize-textarea ', 'placeholder' => '', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('answer_text')){{ $errors->first('answer_text') }}@endif" data-success="right"></span>
                     </div>
                 </div>
 
-                <div class="col m6 s12">
-                    <div class="input-field">
+                <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('question_text', trans('global.faq-questions.fields.question-text').'*') !!}
                         {!! Form::textarea('question_text', old('question_text'), ['class' => 'materialize-textarea ', 'placeholder' => '', 'required' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('question_text')){{ $errors->first('question_text') }}@endif" data-success="right"></span>

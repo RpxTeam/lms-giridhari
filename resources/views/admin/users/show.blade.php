@@ -27,7 +27,7 @@
 
     <div class="card">
 
-        <div class="content">
+        <div class="card-content">
             <div class="title col-12">
                 <h5>@lang('global.app_view')</h5>
             </div>
@@ -86,7 +86,7 @@
                 <li class="tab grey-text"><a class="grey-text" href="#internal_notifications">Notifications</a></li>
             </ul>
         </div>
-        <div class="content">
+        <div class="card-content">
             <div id="user_actions">
                 <table class="striped responsive-table {{ count($user_actions) > 0 ? 'datatable' : '' }}">
                     <thead>

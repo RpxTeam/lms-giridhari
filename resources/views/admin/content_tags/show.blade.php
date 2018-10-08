@@ -30,7 +30,7 @@
             <h5>@lang('global.app_view')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col s6">
                     <table class="bordered striped">
@@ -54,7 +54,7 @@
             </ul>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div role="tabpanel" class="tab-pane active" id="content_pages">
                 <table class="striped responsive-table {{ count($content_pages) > 0 ? 'datatable' : '' }}">
                     <thead>

@@ -39,7 +39,7 @@
             <h3>@lang('global.app_list')</h3>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <table class="table table-striped no-order dataTable {{ count($coursecategories) > 0 ? 'datatable' : '' }} @can('coursecategory_delete') @if ( request('show_deleted') != 1 ) dt-select @else dt-show @endif @endcan no-order">
                 <thead>
                     <tr>

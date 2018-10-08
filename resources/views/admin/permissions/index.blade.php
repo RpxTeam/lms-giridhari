@@ -30,7 +30,7 @@
             @lang('global.app_list')
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <table class="table table-striped no-order dataTable {{ count($permissions) > 0 ? 'datatable' : '' }} @can('permission_delete') dt-select @else dt-show @endcan">
                 <thead>
                     <tr>

@@ -31,10 +31,10 @@
             <h5>@lang('global.app_edit')</h5>
         </div>
 
-        <div class="content">
+        <div class="card-content">
             <div class="row">
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('view', trans('global.datatrail.fields.view').'') !!}
                         {!! Form::number('view', old('view'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('view')){{ $errors->first('view') }}@endif" data-success="right"></span>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('progress', trans('global.datatrail.fields.progress').'') !!}
                         {!! Form::number('progress', old('progress'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('progress')){{ $errors->first('progress') }}@endif" data-success="right"></span>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="col m4 s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('rating', trans('global.datatrail.fields.rating').'') !!}
                         {!! Form::number('rating', old('rating'), ['class' => 'validate']) !!}
                         <span class="helper-text" data-error="@if($errors->has('rating')){{ $errors->first('rating') }}@endif" data-success="right"></span>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="col s12">
-                    <div class="input-field">
+                    <div class="mdc-text-field mdc-text-field--fullwidth rpx-text-field--fullwidth">
                         {!! Form::label('testimonal', trans('global.datatrail.fields.testimonal').'') !!}
                         {!! Form::textarea('testimonal', old('testimonal'), ['class' => 'materialize-textarea ', 'placeholder' => '']) !!}
                         <span class="helper-text" data-error="@if($errors->has('testimonal')){{ $errors->first('testimonal') }}@endif" data-success="right"></span>
