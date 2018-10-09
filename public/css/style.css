@@ -13,8 +13,11 @@ nav ul a, nav .brand-logo {
 h1 {
     font-size: 3.5em;
 }
+h2 {
+    margin-top: 3rem;
+}
 p {
-    line-height: 2rem;
+    line-height: 1.2rem;
 }
 .sidenav-trigger {
     color: #26a69a;
@@ -29,9 +32,9 @@ p {
     width: 100%;
 }
 .brand-logo img {
-    margin-top: 0.25em;
+    margin-top: 0.4em;
     margin-left: 0.25em;
-    height: 50px;
+    height: 40px;
 }
 
 /* label focus color */
@@ -97,11 +100,17 @@ p {
         width: 80%;
     }
     .brand-logo img {
-        margin-left: 0.5em;
+        margin-top: 5px;
         height: 45px;
     }
     .parallax-container {
         min-height: 500px;
+    }
+    .ck img {
+        width: 100%!important;
+        height: auto!important;
+        padding: 0!important;
+        margin-bottom: 30px!important;
     }
 }
 .icon-block {
@@ -125,8 +134,6 @@ footer.page-footer {
 .mgt10 i {
     margin-top: 10px;
 }
-
-
 .jajaja {
     width: 100%;
     max-width: 500px;
@@ -137,18 +144,201 @@ footer.page-footer {
 .jajaja h5 {
     margin-bottom: 40px;
 }
-
 .itens {
     margin-bottom: 10px!important;
 }
-
 .itens a {
     display: block;
     width: 100%;
     height: 20px;
     float: left;
 }
-
 .mamama {
     font-size: 16px;
 }
+.pagination {
+    background-color: grey;
+    padding: 10px;
+}
+.pagination li.active {
+    background-color: black;
+    color: white;
+}
+.pagination span.page-link {
+    margin-top: 4px;
+    display: block;
+}
+li.page-item {
+    min-width: 30px;
+    min-height: 30px;
+    text-align: center;
+}
+.card .card-content {
+}
+.card .content {
+    padding: 25px;
+}
+.alert-card {
+    width: 100%;
+    padding: 10px;
+}
+section.home {
+    padding: 50px 0;
+}
+.btn-floating.halfway-fab {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.card .card-action, .modal .modal-footer {
+    background-color: #f3f3f3;
+    z-index: 1!important;
+}
+.modal-footer {
+    padding: 5px 25px!important;
+}
+.modal-footer .modal-close {
+    margin-right: 20px!important;
+}
+.jarbas {
+    margin: 2.3733333333rem 0 1.424rem 0;
+}
+.btn.tooltipped {
+    margin-bottom: 5px;
+}
+.page-title.left {
+    margin: 0;
+}
+.itans-title * {
+    margin-right: 10px;
+}
+.itans-title h2 {
+    margin-right: 20px!important;    
+}
+.itans-title a {
+    margin-top: 12px;
+}
+.card.sticky-action .card-reveal {
+    padding-bottom: 84px;
+    top: 99%!important;
+}
+p.c-title {
+    margin-bottom: 20px!important;
+}
+.charles {
+    margin-bottom: -20px;
+    padding: 50px 0;
+}
+nav {
+    position: relative;
+    z-index: 2;
+}
+.brand-footer {
+    width: 30px;
+    vertical-align: middle;
+    padding: 2px;
+}
+.title-panel h2.page-title {
+    margin: 0;
+}
+.title-panel {
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(121, 116, 116, 0.75);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(121, 116, 116, 0.75);
+    box-shadow: 0px 2px 2px 0px rgba(121, 116, 116, 0.75);
+    width: 100%;
+    min-height: 175px;
+    z-index: 1;
+    position: relative;
+    padding: 50px 0px;
+    background-size: cover;
+}
+.title-panel a.btn {
+    margin: 5px 0 20px;
+}
+.title-panel img {
+
+}
+.card-course {
+    padding: 30px;
+    position: relative;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+.shadow {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.sidenav-overlay {
+    z-index: 1;
+}
+.parallax-container .btn {
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+.collection .collection-item.avatar .secondary-content {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+.collection {
+    border: none;
+}
+.collection .collection-item {
+    background-color: #fff;
+    line-height: 1.5rem;
+    padding: 10px 20px 30px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+a.pepe, a.pupa {
+    font-size: 20px;
+    vertical-align: middle;
+    float: right;
+        top: -5px;
+    position: relative;
+}
+.kappa {
+    margin-top: 30px;
+}
+
+
+.grid {
+    margin: 15px;
+}
+
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+/* 5 columns, percentage width */
+@media only screen and (min-width: 992px) {
+.grid-item,
+    .grid-sizer {
+      width: 22%;
+    }
+
+}
+
+.grid-item {
+  float: left;
+  min-height: 100px;
+}
+
+.gutter-sizer { width: 4%; }
+
+.grid-item--width2 { width: 48%; }
+.grid-item--height2 { height: 200px; }

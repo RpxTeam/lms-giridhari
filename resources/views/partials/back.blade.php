@@ -1,11 +1,11 @@
-        <footer class="page-footer grey lighten-2">
+        <footer class="page-footer grey darken-1">
             <div class="container">
                 
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    Made by
-                    <a class="white-text" href="http://www.rperformance.com.br">
+                    <a class="black-text" href="http://www.rperformancegroup.com">
+                        <img class="brand-footer" src="{{ url('/') }}/images/Logo_RPX.png"/>
                         RPerformance Group
                     </a>
                 </div>
@@ -17,6 +17,8 @@
         <script src="{{ url('/') }}/js/materialize.js">
         </script>
         <script src="{{ url('/') }}/js/init.js">
+        </script>
+        <script src="{{ url('/') }}/js/isotope.pkgd.min.js">
         </script>
     </body>
 </html>

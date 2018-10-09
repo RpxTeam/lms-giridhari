@@ -12,8 +12,8 @@
             <link href="{{ url('/') }}/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
         </link>
     </head>
-    <body>
-        <nav class="white" role="navigation">
+    <body class="grey lighten-3">
+        <nav class="white darken-5" role="navigation">
             <div class="nav-wrapper container">
                 <a class="brand-logo" href="/">
                     <!-- <img src="http://static.campanhaporto.com.br/guide/logo/porto-seguro/institucional/marca/inst-bgd-sm.svg"/> -->
@@ -21,86 +21,111 @@
                     <!-- <p class="mamama">INSERT LOGO HERE</p> -->
                 </a>
                 <ul class="right hide-on-med-and-down">
+                    
                     <li>
                         <a class="black-text" href="{{ url('/library') }}">
                             Get Started
                         </a>
                     </li>
-                    <li>
-                        <a class="black-text" href="{{ url('/library') }}">
-                            Library
-                        </a>
-                    </li>
+
                     @if (Auth::check())
-                    
-                    <li>
-                        <a class="btn modal-trigger waves-effect waves-light black" href="{{ url('/logout') }}">
-                            Logout
-                        </a>
-                    </li>
+
+                        <li>
+                            <a class="black-text" href="{{ url('/library') }}">
+                                Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a class="black-text" href="{{ url('/guide') }}">
+                                Trails
+                            </a>
+                        </li>
+                        <li>                        
+                            
+                            <a class="btn btn-floating waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Dashboard" href="{{ url('/admin/home') }}"><i class="material-icons">dashboard</i></a>
+
+                        </li>
+                        <li>
+                            <!-- <a class="btn waves-effect waves-light black" href="{{ url('/logout') }}">
+                                Logout
+                            </a> -->
+                            <a class="btn btn-floating waves-effect waves-light black tooltipped" data-position="bottom" data-tooltip="Logout" href="{{ url('/logout') }}"><i class="material-icons">perm_identity</i></a>
+                        </li>
                         
                     @else
 
-                    <li>
-                        <a class="btn modal-trigger waves-effect waves-light black" data-target="modal1" href="#modal1">
-                            Login
-                        </a>
-                    </li>
+                        <li>
+                            <a class="black-text" href="{{ url('/library') }}">
+                                Library
+                            </a>
+                        </li>
+                        <li>
+                            <a class="black-text" href="{{ url('/guide') }}">
+                                Trails
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-floating waves-effect waves-light black modal-trigger tooltipped" data-position="bottom" data-tooltip="Login" data-target="modal1" href="#modal1"><i class="material-icons">person</i></a>
+                        </li>
+
                         
                     @endif
 
                 </ul>
                 <ul class="sidenav" id="slide-out">
-                    <!-- <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img src="{{ url('/') }}/images/01.abb.jpg">
-                                </img>
-                            </div>
-                            <a href="#user">
-                                <img class="circle" src="{{ url('/') }}/images/01.cabu.jpg"/>
+
+                    @if (Auth::check())
+                    
+                        <li>
+                            <a class="btn waves-effect waves-light black white-text" href="{{ url('/library') }}">
+                                Courses
                             </a>
-                            <a href="#name">
-                                <span class="white-text name">
-                                    E.John
-                                </span>
+                        </li>
+
+                        <li>
+                            <a class="btn waves-effect waves-light black white-text" href="{{ url('/guide') }}">
+                                Trails
                             </a>
-                            <a href="#email">
-                                <span class="white-text email">
-                                    kkkk@gmail.com
-                                </span>
+                        </li>
+
+                        <li>                        
+                            <a class="btn waves-effect waves-light black white-text" href="{{ url('/admin/home') }}">
+                               Dashboard
                             </a>
-                        </div>
-                    </li> -->
-                    <li>
-                        <a class="black-text" href="{{ url('/library') }}">
-                            Get Started
-                        </a>
-                    </li>
-                    <li>
-                        <div class="divider">
-                        </div>
-                    </li>
-                    <li>
-                        <a class="black-text" href="{{ url('/library') }}">
-                            Library
-                        </a>
-                    </li>
-                    <li>
-                        <div class="divider">
-                        </div>
-                    </li>
-                    <li>
-                        <a class="btn modal-trigger waves-effect waves-light black" data-target="modal1" href="#modal1">
-                            Login
-                        </a>
-                    </li>
+
+                        </li>
+
+                        <li>
+                            <a class="btn waves-effect waves-light black white-text" href="{{ url('/logout') }}">
+                                Logout
+                            </a>
+                        </li>
+                        
+                    @else
+
+                        <li>
+                            <a class="btn waves-effect waves-light black white-text modal-trigger " data-target="modal1" href="#modal1">
+                                Login
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="btn waves-effect waves-light black white-text" href="{{ url('/library') }}">
+                                Library
+                            </a>
+                        </li>
+
+                        
+                    @endif
+
                 </ul>
+
                 <a class="sidenav-trigger" data-target="slide-out" href="#">
                     <i class="material-icons black-text">
                         menu
                     </i>
                 </a>
+
                 <!-- Modal Login -->
                 <div class="modal" id="modal1">
                     <div class="modal-content">
@@ -173,5 +198,6 @@
 
                     </div>
                 </div>
+
             </div>
         </nav>

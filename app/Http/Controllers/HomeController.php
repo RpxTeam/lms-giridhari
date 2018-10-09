@@ -43,6 +43,12 @@ class HomeController extends Controller
         return view('index', compact( 'users', 'courses', 'trails', 'faqquestions', 'generals' ));
     }
 
+    public function speech()
+    {
+
+        return view('speech');
+    }
+
     public function home()
     {
         
@@ -64,26 +70,18 @@ class HomeController extends Controller
 
         $mycertificates = DB::table('coursescertificates')
             ->leftJoin('datacourses', 'coursescertificates.id', '=', 'datacourses.certificate_id')
-            // ->where('datacourses.user_id', '=',  $user)
-         // ->where('datacourses.certificate_id', '=',  NOTNULL)
             ->whereNotNull('datacourses.certificate_id')
         ->get();
 
-        // $mycertificates = DB::table('coursescertificates')
-        //  ->where("coursescertificates.id", '=', '1')
-        // ->get();
-
-        // dd($mycertificates);
+        // Testimonal
 
         $mytestimonals = DB::table('datacourses')
             ->leftJoin('courses', 'datacourses.course_id', '=', 'courses.id')
         ->where('datacourses.user_id', '=', $user)
         ->where('datacourses.progress', '=', 100)
-        ->where('datacourses.testimonal', '=', '')
-        ->whereNotNull('datacourses.certificate_id')
+        ->where('datacourses.testimonal', '=', NULL)
+        // ->whereNotNull('datacourses.certificate_id')
        ->get();
-
-       //dd($mytestimonals);
 
         $generals = \App\General::get();
 
@@ -96,8 +94,7 @@ class HomeController extends Controller
     }
 
     public function savefeedback(StoreDatacoursesRequest $request)
-    {
-        //dd($request);        
+    {         
         DB::table('datacourses')
         ->where('datacourses.user_id','=', $request->user_id)
         ->where('datacourses.course_id','=', $request->course_id)
