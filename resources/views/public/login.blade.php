@@ -97,7 +97,7 @@
 
                         <h4 class="black-text light">
                             Welcome to Learning Management System
-                        </h4>
+                        </h4>                 
                         <h5 class="black-text light">{{ ucfirst(config('app.name')) }} @lang('global.app_login')
                         </h5>
 
