@@ -1,0 +1,35 @@
+@import "components/bourbon/bourbon"
+
+*
+	padding: 0
+	margin: 0
+	text-decoration: none
+
+@include font-face('SegoeUI', "../fonts/SegoeUI")
+
+$segoe: 'Segoe UI', Helvetica, Arial, sans-serif
+
+//  COLORS
+$white: #FFFFFF
+$black: #000000
+$orange: #FF7933
+$lightOrange: #FF9100
+
+// EXTENDS CLASSES
+%transition
+	@include transition(all .4s linear)
+.circle
+	@include border-top-radius(50%)
+	@include border-bottom-radius(50%)
+%blockCenter
+	margin-left: auto
+	margin-right: auto
+%clearfix		
+	content: '.'
+	display: block
+	clear: both
+	height: 0
+	line-height: 0
+	font-size: 0
+	visibility: hidden
+	overflow: hidden

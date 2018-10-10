@@ -1,6 +1,10 @@
  @include('partials.front')
 
-
+    <div id="login-page">
+        <div class="logo">
+            <img src="{{ url('assets/img') }}/logo.png" alt="">
+        </div>
+    </div>
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container">
@@ -97,7 +101,7 @@
 
                         <h4 class="black-text light">
                             Welcome to Learning Management System
-                        </h4>                 
+                        </h4>
                         <h5 class="black-text light">{{ ucfirst(config('app.name')) }} @lang('global.app_login')
                         </h5>
 

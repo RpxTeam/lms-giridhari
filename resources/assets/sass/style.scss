@@ -1,0 +1,87 @@
+@import 'config';
+
+@keyframes pulse {
+  0%{
+    transform:scale(.1);opacity: 0;
+  }
+  50%{
+    opacity: .4;
+  }
+  100%{
+    transform: scale(1.6); opacity: 0;
+  }
+}
+
+.icon {
+  display: inline-block;
+  &.person {
+
+  }
+}
+
+#loader {
+  @include position(fixed, 0);
+  background: url('../img/bg-loader.png') center center no-repeat #FF7933;
+  background-size: cover;
+  z-index: 1000;
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+  .line {
+    border: 3px solid $white;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+  }
+
+  .line:nth-child(1) {
+    animation: pulse 2.4s infinite;
+  }
+  .line:nth-child(2) {
+    animation: pulse 2.8s infinite;
+  }
+  .line:nth-child(3) {
+    animation: pulse 3.2s infinite;
+  }
+  .line:nth-child(4) {
+    animation: pulse 3.6s infinite;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  .text {
+    @include position(absolute, null null 0 null);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 110px;
+  }
+  p {
+    font-size: 18px;
+    color: $white;
+    font-family: $segoe;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+#login-page {
+  #logo {
+    margin-top: 60px;
+    img {
+      display: block;
+      @include margin(null auto);
+    }
+  }
+}
