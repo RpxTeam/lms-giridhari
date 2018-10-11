@@ -2,7 +2,7 @@
 
     <div id="login-page">
         <div class="logo">
-            <img src="{{ url('assets/img') }}/logo.png" alt="">
+            <i class="icon icon-guirid"></i>
         </div>
     </div>
     <div class="parallax-container valign-wrapper">

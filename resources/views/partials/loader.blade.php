@@ -1,4 +1,4 @@
-<div id="loader">
+<div id="loader" class="bg-orange-gradient">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>

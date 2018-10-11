@@ -18,4 +18,7 @@ elixir(function(mix) {
     mix
         .sass(['style.scss'], 'public/assets/css/style.css')
         .scripts(['scripts.js'], 'public/assets/js/scripts.js')
+        .browserSync({
+            proxy: 'localhost'
+        })
 });

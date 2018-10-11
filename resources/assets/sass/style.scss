@@ -12,17 +12,8 @@
   }
 }
 
-.icon {
-  display: inline-block;
-  &.person {
-
-  }
-}
-
 #loader {
   @include position(fixed, 0);
-  background: url('../img/bg-loader.png') center center no-repeat #FF7933;
-  background-size: cover;
   z-index: 1000;
   @include display(flex);
   @include flex-direction(column);
@@ -69,19 +60,61 @@
     color: $white;
     font-family: $segoe;
     margin-bottom: 20px;
+    font-weight: 300;
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
 
+#login-page, #register-page {
+  height: 100%;
+  .btns {
+    margin-top: 31px;
+  }
+}
 
 #login-page {
   #logo {
-    margin-top: 60px;
+    padding-top: 60px;
+    margin-bottom: 44px;
     img {
       display: block;
       @include margin(null auto);
     }
+  }
+  form {
+    .remember-me {
+      margin-top: 31px;
+    }
+  }
+}
+
+#register-page {
+  .gridD {
+    @include padding(null 19px);
+  }
+  .back-button {
+    @include position(absolute, 20px null null auto);
+  }
+  #logo {
+    padding-top: 39px;
+    text-align: center;
+    margin-bottom: 25px;
+    a {
+      font-size: 85px;
+      i {
+        color: $white;
+      }
+    }
+  }
+  h5 {
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    background: $white;
+    @include padding(38px 21px 63px)
   }
 }

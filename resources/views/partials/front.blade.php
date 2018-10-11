@@ -7,11 +7,10 @@
             Site Comunicação
         </title>
         <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            {{--<link href="{{ url('/') }}/css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
-            {{--<link href="{{ url('/') }}/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
-            <link href="{{ url('/') }}/assets//css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
-        </link>
+        <link rel="stylesheet" href="{{ url('assets') }}/libs/fontguirid/fontguirid.css">
+        {{--<link href="{{ url('/') }}/css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
+        {{--<link href="{{ url('/') }}/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
+        <link href="{{ url('/') }}/assets//css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
     </head>
     <body class="grey lighten-3">
         @include('partials.loader')

@@ -1,9 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-}
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 @font-face {
   font-family: "SegoeUI";
   font-style: normal;
@@ -11,11 +6,274 @@
   src: url("../fonts/SegoeUI.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI.woff2") format("woff2"), url("../fonts/SegoeUI.woff") format("woff"), url("../fonts/SegoeUI.ttf") format("truetype"), url("../fonts/SegoeUI.svg#SegoeUI") format("svg");
 }
 
+.back-button a, .btn, .checkmark {
+  transition: all 0.4s linear;
+}
+
 .circle {
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.5714285714em;
+}
+
+h2 {
+  font-size: 2.1428571429em;
+}
+
+h3 {
+  font-size: 1.6428571429em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.2857142857em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.gridD {
+  max-width: 100%;
+  padding-right: 45px;
+  padding-left: 45px;
+  position: relative;
+}
+
+p {
+  font-size: 0.0714285714em;
+}
+
+small {
+  font-size: 0.8571428571em;
+}
+
+.bg-orange-gradient {
+  background: url("../img/bg-loader.png") center center no-repeat #FF7933;
+  background-size: cover;
+}
+
+.black-text {
+  color: #3D3D3D;
+}
+
+.grey-text {
+  color: #969696;
+}
+
+[class*="icon"] {
+  color: #FF7933;
+}
+
+[class*="icon"]::before {
+  color: inherit;
+}
+
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 13px;
+}
+
+.back-button a {
+  opacity: .54;
+}
+
+.back-button a i {
+  color: #FFFFFF;
+}
+
+.back-button a:hover {
+  opacity: .7;
+}
+
+.input-field {
+  position: relative;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.input-field.input-field-icon i,
+.input-field.input-field-icon a {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.input-field.input-field-icon a {
+  left: auto;
+  right: 23px;
+}
+
+.input-field.input-field-icon input {
+  padding-left: 28px;
+}
+
+.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #EEEEEE;
+  border-radius: 6px;
+  height: 39px;
+  width: calc(100% - 28px);
+  font-size: 1em;
+  font-weight: 300;
+  padding-left: 12px;
+}
+
+.input::-webkit-input-placeholder {
+  color: #969696;
+}
+
+.input::-moz-placeholder {
+  color: #969696;
+}
+
+.input:-moz-placeholder {
+  color: #969696;
+}
+
+.input:-ms-input-placeholder {
+  color: #969696;
+}
+
+.btns-center {
+  text-align: center;
+}
+
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  min-width: 213px;
+  font-size: 1em;
+  line-height: 1em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  padding: 11px 9px;
+}
+
+.btn.btn-orange {
+  background: #FF9100;
+}
+
+.btn.btn-green {
+  background: #2EC600;
+}
+
+.btn.btn-grey {
+  color: #3D3D3D;
+  background: #EEEEEE;
+}
+
+.btn.btn-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a.btn {
+  display: inline-block;
+  min-width: calc(213px - 18px);
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 2px solid #969696;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #FF9100;
+  border-color: #FF9100;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2EC600;
+  border-color: #2EC600;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  top: -2px;
+  left: 4px;
+  height: 13px;
+  width: 6px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.box-shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.bd-radius {
+  border-radius: 6px;
 }
 
 @keyframes pulse {
@@ -32,18 +290,12 @@
   }
 }
 
-.icon {
-  display: inline-block;
-}
-
 #loader {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("../img/bg-loader.png") center center no-repeat #FF7933;
-  background-size: cover;
   z-index: 1000;
   display: -webkit-box;
   display: -moz-box;
@@ -114,20 +366,70 @@
   color: #FFFFFF;
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 
 #loader p:last-child {
   margin-bottom: 0;
 }
 
+#login-page, #register-page {
+  height: 100%;
+}
+
+#login-page .btns, #register-page .btns {
+  margin-top: 31px;
+}
+
 #login-page #logo {
-  margin-top: 60px;
+  padding-top: 60px;
+  margin-bottom: 44px;
 }
 
 #login-page #logo img {
   display: block;
   margin-right: auto;
   margin-left: auto;
+}
+
+#login-page form .remember-me {
+  margin-top: 31px;
+}
+
+#register-page .gridD {
+  padding-right: 19px;
+  padding-left: 19px;
+}
+
+#register-page .back-button {
+  position: absolute;
+  top: 20px;
+  left: auto;
+}
+
+#register-page #logo {
+  padding-top: 39px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#register-page #logo a {
+  font-size: 85px;
+}
+
+#register-page #logo a i {
+  color: #FFFFFF;
+}
+
+#register-page h5 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#register-page form {
+  background: #FFFFFF;
+  padding: 38px 21px 63px;
 }
 
 /*# sourceMappingURL=style.css.map */
