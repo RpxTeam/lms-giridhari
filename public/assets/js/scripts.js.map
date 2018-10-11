@@ -1,0 +1,1 @@
+{"version":3,"sources":["scripts.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"scripts.js","sourcesContent":["/*\n * Remove loader\n *\n */\n$(window).on('load', function() {\n    setTimeout(function() {\n        $('#loader').fadeOut();\n    }, 2000);\n});"]}

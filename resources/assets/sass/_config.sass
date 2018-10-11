@@ -1,0 +1,210 @@
+@import "components/bourbon/bourbon"
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900')
+
+@include font-face('SegoeUI', "../fonts/SegoeUI")
+
+$segoe: 'Segoe UI', Helvetica, Arial, sans-serif
+$roboto: 'Roboto', sans-serif
+
+//  COLORS
+$white: #FFFFFF
+$black: #3D3D3D
+$grey: #969696
+$lightGrey: #EEEEEE
+$orange: #FF7933
+$lightOrange: #FF9100
+$green: #2EC600
+
+// EXTENDS CLASSES
+%transition
+	@include transition(all .4s linear)
+.circle
+	@include border-top-radius(50%)
+	@include border-bottom-radius(50%)
+%blockCenter
+	margin-left: auto
+	margin-right: auto
+%clearfix		
+	content: '.'
+	display: block
+	clear: both
+	height: 0
+	line-height: 0
+	font-size: 0
+	visibility: hidden
+	overflow: hidden
+
+$browser-context: 14 // Default
+
+@function em($pixels, $context: $browser-context)
+	@return #{$pixels/$context}em
+
+*
+	padding: 0
+	margin: 0
+	text-decoration: none
+
+h1
+	font-size: em(36)
+h2
+	font-size: em(30)
+h3
+	font-size: em(23)
+h4
+	font-size: em(21)
+h5
+	font-size: em(18)
+h6
+	font-size: em(14)
+
+html, body
+	height: 100%
+	font-family: $roboto
+	font-size: 14px
+
+.gridD
+	max-width: 100%
+	+padding(null 45px)
+	position: relative
+
+p
+	font-size: em(1)
+small
+	font-size: em(12)
+
+.bg-orange-gradient
+	background: url('../img/bg-loader.png') center center no-repeat #FF7933;
+	background-size: cover;
+
+.black-text
+	color: $black
+.grey-text
+	color: $grey
+
+[class*="icon"] 
+	color: $orange
+	&::before 
+		color: inherit
+
+.back-button
+	+position(fixed, 10px null null 13px)
+	a
+		opacity: .54
+		@extend %transition
+		i
+			color: $white
+		&:hover
+			opacity: .7
+
+.input-field
+	@include position(relative, null)
+	@include padding(6px null)
+
+.input-field.input-field-icon i,
+.input-field.input-field-icon a
+	@include position(absolute, 50% null null 10px)
+	@include transform(translateY(-50%))
+
+.input-field.input-field-icon a 
+	left: auto
+	right: 23px
+
+.input-field.input-field-icon input
+	padding-left: 28px
+
+.input
+	@include appearance(none)
+	border: 1px solid $lightGrey
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	@include size(calc(100% - 28px) 39px)
+	font-size: em(14)
+	font-weight: 300
+	padding-left: 12px
+	@include placeholder
+		color: $grey
+
+.btns-center
+	text-align: center
+.btn
+	@include appearance(none)
+	border: none
+	min-width: 213px
+	font-size: 1em
+	line-height: 1em
+	border-radius: 4px
+	text-transform: uppercase
+	color: $white
+	display: block
+	text-align: center
+	@include margin(6px null)
+	cursor: pointer
+	@include padding(11px 9px)
+	@extend %transition
+	&.btn-orange
+		background: $lightOrange
+	&.btn-green
+		background: $green
+	&.btn-grey
+		color: $black
+		background: $lightGrey
+	&.btn-center
+		@include margin(null auto)
+a.btn
+	display: inline-block
+	min-width: calc(213px - 18px)
+
+.checkbox
+	@include size(16)
+
+.checkbox-container
+	display: inline-block
+	position: relative
+	padding-left: 25px
+	cursor: pointer
+	@include user-select(none)
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+		@include size(0)
+
+.checkmark
+	@include position(absolute, -1px null null 0)
+	width: 14px
+	height: 14px
+	background-color: transparent
+	border: 2px solid $grey
+	@extend %transition
+
+.checkbox-container:hover input ~ .checkmark
+	background-color: $lightOrange
+	border-color: $lightOrange
+
+.checkbox-container input:checked ~ .checkmark
+	background-color: $green
+	border-color: $green
+
+.checkmark:after
+	content: ""
+	position: absolute
+	display: none
+
+.checkbox-container input:checked ~ .checkmark:after
+	display: block
+
+.checkbox-container .checkmark:after
+	@include position(null, -2px null null 4px)
+	@include size(6px 13px)
+	border: solid white
+	border-width: 0 3px 3px 0
+	@include transform(rotate(45deg))
+
+.box-shadow
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16)
+
+.bd-radius
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px

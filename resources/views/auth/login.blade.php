@@ -1,188 +1,42 @@
- @include('partials.front')
+@include('partials.front')
 
-
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="jajaja white center">
-                    <div class="row">       
-                    
-                    <!-- 
-                        <h3>
-                            <i class="mdi-content-send brown-text">
-                            </i>
-                        </h3>
-                        <h4>
-                            Login
-                        </h4>
-                        
-                        <div class="card">
-                            <div class="title">{{ ucfirst(config('app.name')) }} @lang('global.app_login')</div>
-                            <div class="content">
-                                @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <strong>Whoops!</strong> @lang('global.app_there_were_problems_with_input'):
-                                    <br><br>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                @endif
-
-                                <form class="form-horizontal"
-                                      role="form"
-                                      method="POST"
-                                      action="{{ url('login') }}">
-                                    <input type="hidden"
-                                           name="_token"
-                                           value="{{ csrf_token() }}">
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">@lang('global.app_email')</label>
-
-                                        <div class="col s6">
-                                            <input type="email"
-                                                   class="form-control"
-                                                   name="email"
-                                                   value="{{ old('email') }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">@lang('global.app_password')</label>
-
-                                        <div class="col s6">
-                                            <input type="password"
-                                                   class="form-control"
-                                                   name="password">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <a href="{{ route('auth.password.reset') }}">@lang('global.app_forgot_password')</a>
-                                            <br>
-                                            <a href="{{ route('auth.register') }}">@lang('global.app_registration')</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <label>
-                                                <input type="checkbox"
-                                                       name="remember"> @lang('global.app_remember_me')
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="margin-right: 15px;">
-                                                @lang('global.app_login')
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    
-
-                                </form>
-                            </div>
-                        </div>
-                    -->
-                        
-                        <h4 class="black-text light">
-                            Welcome to Learning Management System
-                        </h4>                 
-                        <h5 class="black-text light">{{ ucfirst(config('app.name')) }} @lang('global.app_login')
-                        </h5>
-
-                    </div>
-
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were problems with input:
-                            <br><br>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('login') }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <div class="row">
-                            <div class="input-field">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                    <label for="email">
-                                        Email
-                                    </label>
-                                </input>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field">
-                                <input id="password" type="password" class="form-control" name="password">
-                                    <label for="password">
-                                        Password
-                                    </label>
-                                </input>
-                            </div>
-                        </div>
-
-                        <div class="row center">
-                            <button type="submit" class="modal-close btn waves-effect waves-light black">
-                                Login
-                            </button>
-                        </div>
-
-                        <div class="row center">
-                            <a class="black-text" href="{{ route('auth.password.reset') }}">
-                                Forgot Password?
-                            </a>
-                        </div>
-
-                        <div class="row center">
-                            <a class="black-text" href="{{ url('login/facebook') }}">
-                                Register with facebook
-                            </a>
-                        </div>
-
-                        <div class="row center">
-                            <a class="black-text" href="{{ url('login/google') }}">
-                                Register with Google
-                            </a>
-                        </div>
-
-                        <div class="row center">
-                            <a class="black-text" href="{{ route('auth.register') }}">
-                                Register
-                            </a>
-                        </div>
-
-                        <div class="row center">
-                            <a class="black-text" target="_blank" href="https://www.google.com">
-                                Problems? Click Here
-                             </a>
-                        </div>
-                        
-
-                    </form>
-
-                </div>
+<div id="login-page">
+    <div class="gridD">
+        <div id="logo">
+            <img src="{{ url('assets/img') }}/logo.png" alt="">
+        </div>
+        <form class="form-horizontal"
+              role="form"
+              method="POST"
+              action="{{ url('login') }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="input-field input-field-icon">
+                <i class="icon-person"></i>
+                <input type="email" class="input" name="email" value="{{ old('email') }}" placeholder="Usuário">
+                {{--<input type="text" class="input">--}}
             </div>
-        </div>
-        <div class="parallax">
-            <img alt="Unsplashed background img 2" src="images/background3.jpg"/>
-        </div>
+            <div class="input-field input-field-icon">
+                <i class="icon-padlock"></i>
+                <input type="password" class="input" name="password" placeholder="Senha">
+                <a href="#"><span class="icon-eye-o"></span></a>
+            </div>
+            <div class="forgotten-password">
+                <a href="{{ route('auth.password.reset') }}" class="grey-text"><small>@lang('global.app_forgot_password')</small></a>
+            </div>
+            <div class="btns btns-center">
+                <button type="submit" class="btn btn-grey btn-center">Entrar</button>
+                <a href="{{ route('auth.register') }}" class="btn btn-orange btn-center">@lang('global.app_registration')</a>
+            </div>
+            <div class="remember-me">
+                <a href="#" class="black-text"></a>
+            </div>
+            <label class="checkbox-container" class="black-text"><small>@lang('global.app_remember_me')</small>
+                <input type="checkbox"
+                       name="remember">
+                <span class="checkmark"></span>
+            </label>
+        </form>
     </div>
+</div>
 
- @include('partials.back')
+@include('partials.back')
