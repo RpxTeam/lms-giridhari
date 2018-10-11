@@ -8,6 +8,8 @@ Route::get('/speech', 'HomeController@speech');
 Route::get('/library', 'LibraryController@index');
 Route::get('/guide', 'GuideController@index');
 
+Route::get('/introduction', 'IntroductionController@index');
+
 Route::prefix('courses')->group(function(){
     Route::get('', ['uses' => 'CoursesController@index', 'as' => 'courses']);
     Route::get('{id}', ['uses' => 'CoursesController@show', 'as' => 'courses.show']);

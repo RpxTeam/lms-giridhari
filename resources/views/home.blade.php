@@ -24,7 +24,7 @@
                 <div class="col m1 s12">
                     <div class="input-field">
                         {!! Form::label('rating', trans('global.datacourse.fields.rating').'') !!}
-                            {!! Form::number('rating', old('rating'), ['class' => 'validate']) !!}
+                            {!! Form::number('rating', 'value', ['min' => 1, 'max' => 5], old('rating'), ['class' => 'validate']) !!}
                             <span class="helper-text" data-error="@if($errors->has('rating')){{ $errors->first('rating') }}@endif" data-success="right"></span>
                     </div>
                 </div>

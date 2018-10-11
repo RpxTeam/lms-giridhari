@@ -118,3 +118,76 @@
     @include padding(38px 21px 63px)
   }
 }
+
+#intro-page {
+  height: 100%;
+  position: relative;
+  .gridD {
+    height: 100%;
+  }
+  .steps {
+    height: 100%;
+  }
+  .step {
+    background-color: $white;
+    @include position(absolute, 0);
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    .icons {
+      text-align: center;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      margin-bottom: 79px;
+      i {
+        font-size: 116px;
+        @include margin(null 12px);
+        &.opacity {
+          opacity: .24;
+          font-size: 80px;
+          margin: 0;
+        }
+      }
+    }
+    h4 {
+      text-align: center;
+      margin-bottom: 29px;
+    }
+  }
+  .menu-bottom {
+    @include position(absolute, null 0 0);
+    height: 56px;
+    background: $lightOrange;
+    @include padding(null 18px);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    .step-bullets {
+      @include display(flex);
+
+    }
+    .bullet {
+      @include size(6px);
+      background: transparent;
+      border: 1px solid $white;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      margin-right: 10px;
+      cursor: pointer;
+      @extend %transition;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        background: $white;
+      }
+    }
+    a {
+      color: $white;
+      font-weight: 500;
+    }
+  }
+}

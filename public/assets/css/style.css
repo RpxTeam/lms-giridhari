@@ -6,7 +6,7 @@
   src: url("../fonts/SegoeUI.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI.woff2") format("woff2"), url("../fonts/SegoeUI.woff") format("woff"), url("../fonts/SegoeUI.ttf") format("truetype"), url("../fonts/SegoeUI.svg#SegoeUI") format("svg");
 }
 
-.back-button a, .btn, .checkmark {
+.back-button a, .btn, .checkmark, #intro-page .menu-bottom .bullet {
   transition: all 0.4s linear;
 }
 
@@ -37,10 +37,12 @@ h3 {
 
 h4 {
   font-size: 1.5em;
+  font-weight: 400;
 }
 
 h5 {
   font-size: 1.2857142857em;
+  font-weight: 400;
 }
 
 h6 {
@@ -55,13 +57,15 @@ html, body {
 
 .gridD {
   max-width: 100%;
-  padding-right: 45px;
-  padding-left: 45px;
+  margin-right: 42px;
+  margin-left: 42px;
   position: relative;
 }
 
 p {
-  font-size: 0.0714285714em;
+  font-weight: 300;
+  color: #707070;
+  line-height: 1.5em;
 }
 
 small {
@@ -70,7 +74,7 @@ small {
 
 .bg-orange-gradient {
   background: url("../img/bg-loader.png") center center no-repeat #FF7933;
-  background-size: cover;
+  background-background-size: cover;
 }
 
 .black-text {
@@ -207,6 +211,11 @@ small {
 a.btn {
   display: inline-block;
   min-width: calc(213px - 18px);
+}
+
+.checkbox {
+  height: 16px;
+  width: 16px;
 }
 
 .checkbox-container {
@@ -430,6 +439,147 @@ a.btn {
 #register-page form {
   background: #FFFFFF;
   padding: 38px 21px 63px;
+}
+
+#intro-page {
+  height: 100%;
+  position: relative;
+}
+
+#intro-page .gridD {
+  height: 100%;
+}
+
+#intro-page .steps {
+  height: 100%;
+}
+
+#intro-page .step {
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+  box-pack: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-orient: vertical;
+  box-direction: normal;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+
+#intro-page .step .icons {
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+  box-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-pack: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  margin-bottom: 79px;
+}
+
+#intro-page .step .icons i {
+  font-size: 116px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+#intro-page .step .icons i.opacity {
+  opacity: .24;
+  font-size: 80px;
+  margin: 0;
+}
+
+#intro-page .step h4 {
+  text-align: center;
+  margin-bottom: 29px;
+}
+
+#intro-page .menu-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 56px;
+  background: #FF9100;
+  padding-right: 18px;
+  padding-left: 18px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+  box-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+
+#intro-page .menu-bottom .step-bullets {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+}
+
+#intro-page .menu-bottom .bullet {
+  height: 6px;
+  width: 6px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#intro-page .menu-bottom .bullet:last-child {
+  margin-right: 0;
+}
+
+#intro-page .menu-bottom .bullet.active {
+  background: #FFFFFF;
+}
+
+#intro-page .menu-bottom a {
+  color: #FFFFFF;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

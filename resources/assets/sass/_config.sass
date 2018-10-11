@@ -1,7 +1,7 @@
 @import "components/bourbon/bourbon"
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900')
 
-@include font-face('SegoeUI', "../fonts/SegoeUI")
++font-face('SegoeUI', "../fonts/SegoeUI")
 
 $segoe: 'Segoe UI', Helvetica, Arial, sans-serif
 $roboto: 'Roboto', sans-serif
@@ -9,6 +9,7 @@ $roboto: 'Roboto', sans-serif
 //  COLORS
 $white: #FFFFFF
 $black: #3D3D3D
+$blackText: #707070
 $grey: #969696
 $lightGrey: #EEEEEE
 $orange: #FF7933
@@ -17,10 +18,10 @@ $green: #2EC600
 
 // EXTENDS CLASSES
 %transition
-	@include transition(all .4s linear)
+	+transition(all .4s linear)
 .circle
-	@include border-top-radius(50%)
-	@include border-bottom-radius(50%)
+	+border-top-radius(50%)
+	+border-bottom-radius(50%)
 %blockCenter
 	margin-left: auto
 	margin-right: auto
@@ -52,8 +53,10 @@ h3
 	font-size: em(23)
 h4
 	font-size: em(21)
+	font-weight: 400
 h5
 	font-size: em(18)
+	font-weight: 400
 h6
 	font-size: em(14)
 
@@ -64,17 +67,20 @@ html, body
 
 .gridD
 	max-width: 100%
-	+padding(null 45px)
+	+margin(null 42px)
 	position: relative
 
 p
-	font-size: em(1)
+	font-weight: 300
+	color: $blackText
+	line-height: 1.5em
+
 small
 	font-size: em(12)
 
 .bg-orange-gradient
-	background: url('../img/bg-loader.png') center center no-repeat #FF7933;
-	background-size: cover;
+	background: url('../img/bg-loader.png') center center no-repeat #FF7933
+		background-size: cover
 
 .black-text
 	color: $black
@@ -97,13 +103,13 @@ small
 			opacity: .7
 
 .input-field
-	@include position(relative, null)
-	@include padding(6px null)
+	+position(relative, null)
+	+padding(6px null)
 
 .input-field.input-field-icon i,
 .input-field.input-field-icon a
-	@include position(absolute, 50% null null 10px)
-	@include transform(translateY(-50%))
+	+position(absolute, 50% null null 10px)
+	+transform(translateY(-50%))
 
 .input-field.input-field-icon a 
 	left: auto
@@ -113,22 +119,22 @@ small
 	padding-left: 28px
 
 .input
-	@include appearance(none)
+	+appearance(none)
 	border: 1px solid $lightGrey
 	-webkit-border-radius: 6px
 	-moz-border-radius: 6px
 	border-radius: 6px
-	@include size(calc(100% - 28px) 39px)
+	+size(calc(100% - 28px) 39px)
 	font-size: em(14)
 	font-weight: 300
 	padding-left: 12px
-	@include placeholder
+	+placeholder
 		color: $grey
 
 .btns-center
 	text-align: center
 .btn
-	@include appearance(none)
+	+appearance(none)
 	border: none
 	min-width: 213px
 	font-size: 1em
@@ -138,9 +144,9 @@ small
 	color: $white
 	display: block
 	text-align: center
-	@include margin(6px null)
+	+margin(6px null)
 	cursor: pointer
-	@include padding(11px 9px)
+	+padding(11px 9px)
 	@extend %transition
 	&.btn-orange
 		background: $lightOrange
@@ -150,28 +156,28 @@ small
 		color: $black
 		background: $lightGrey
 	&.btn-center
-		@include margin(null auto)
+		+margin(null auto)
 a.btn
 	display: inline-block
 	min-width: calc(213px - 18px)
 
 .checkbox
-	@include size(16)
+	+size(16px)
 
 .checkbox-container
 	display: inline-block
 	position: relative
 	padding-left: 25px
 	cursor: pointer
-	@include user-select(none)
+	+user-select(none)
 	input
 		position: absolute
 		opacity: 0
 		cursor: pointer
-		@include size(0)
+		+size(0)
 
 .checkmark
-	@include position(absolute, -1px null null 0)
+	+position(absolute, -1px null null 0)
 	width: 14px
 	height: 14px
 	background-color: transparent
@@ -195,11 +201,11 @@ a.btn
 	display: block
 
 .checkbox-container .checkmark:after
-	@include position(null, -2px null null 4px)
-	@include size(6px 13px)
+	+position(null, -2px null null 4px)
+	+size(6px 13px)
 	border: solid white
 	border-width: 0 3px 3px 0
-	@include transform(rotate(45deg))
+	+transform(rotate(45deg))
 
 .box-shadow
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16)
