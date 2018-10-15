@@ -45,6 +45,8 @@ $browser-context: 14 // Default
 	margin: 0
 	text-decoration: none
 
+h1, h2, h3, h4, h5, h6
+	font-weight: 400
 h1
 	font-size: em(36)
 h2
@@ -53,10 +55,8 @@ h3
 	font-size: em(23)
 h4
 	font-size: em(21)
-	font-weight: 400
 h5
 	font-size: em(18)
-	font-weight: 400
 h6
 	font-size: em(14)
 
@@ -65,9 +65,25 @@ html, body
 	font-family: $roboto
 	font-size: 14px
 
+body
+	overflow: hidden
+
+#main
+	height: 100%
+	+display(flex)
+	+flex-direction(column)
+
+#content-wrapper
+	flex: 1 1 auto
+	position: relative
+	overflow-y: auto
+
+#fixed-menu
+	flex: 0 0 auto
+
 .gridD
 	max-width: 100%
-	+margin(null 42px)
+	+margin(null 19px)
 	position: relative
 
 p
@@ -91,6 +107,10 @@ small
 	color: $orange
 	&::before 
 		color: inherit
+		display: block
+	&.rotate180
+		&::before
+			+transform(rotate(180deg))
 
 .back-button
 	+position(fixed, 10px null null 13px)
@@ -214,3 +234,164 @@ a.btn
 	-webkit-border-radius: 6px
 	-moz-border-radius: 6px
 	border-radius: 6px
+
+.progress
+	.row
+		+display(flex)
+		+justify-content(space-between)
+		+align-items(flex-end)
+		p
+			font-size: 12px
+			font-weight: 500
+			color: rgba(0, 0, 0, .54)
+
+.progress-bar
+	+size(100% 9px)
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	display: block
+	position: relative
+	background: $grey
+	overflow: hidden
+	margin-top: 9px
+	.bar
+		background: $orange
+		height: 100%
+
+.card
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .4)
+	border-radius: 4px
+	+margin(15px null)
+	overflow: hidden
+	.card-header
+		background: $white
+		+display(flex)
+		+justify-content(space-between)
+		+padding(9px 16px)
+		i
+			color: #000000
+		.card-btn
+			i
+				font-size: 8px
+				&::before
+					@extend %transition
+		.left, .right
+			+display(flex)
+			+align-items(center)
+		.info
+			margin-left: 12px
+		.icon
+			+size(40px)
+			background: $lightOrange
+			@extend .circle
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			i
+				font-size: 26px
+				color: $white
+		h4
+			font-size: 14px
+			color: rgba(0, 0, 0, .87)
+		h3
+			font-size: 14px
+			color: rgba(0, 0, 0, .54)
+
+	.card-image
+		+size(100% 96px)
+		display: block
+		background-position: center center
+		position: relative
+		background-size: cover
+		@extend %transition
+		&.big-image
+			height: 291px
+			&::before
+				opacity: .52
+		&::before
+			content: ''
+			+position(absolute, 0)
+			opacity: 0
+			background: #000000
+			@extend %transition
+	.card-resume
+		+padding(16px)
+		border-bottom: 1px solid rgba($black, .49)
+		display: none
+		p
+			font-size: em(12)
+	.card-content
+		background: $lightGrey
+		+padding(21px)
+		display: none
+	.card-footer
+		+padding(15px)
+		&.buttons
+			+display(flex)
+			+justify-content(flex-end)
+		a
+			margin-left: 33px
+			color: $orange
+			text-transform: uppercase
+	&.card-open
+		.card-btn
+			i
+				&::before
+					+transform(rotate(0deg))
+
+.title
+	h3
+		margin-top: 30px
+	p
+		font-size: 12px
+		color: $black
+
+#fixed-menu
+	//+position(fixed, null 0 0)
+	height: 46px
+	z-index: 10
+	background: $white
+	-webkit-box-shadow: 0 -5px 6px rgba(0, 0, 0, .16)
+	-moz-box-shadow: 0 -5px 6px rgba(0, 0, 0, .16)
+	box-shadow: 0 -5px 6px rgba(0, 0, 0, .16)
+	ul
+		height: 100%
+		+display(flex)
+		+justify-content(space-around)
+		+align-items(center)
+		li
+			+display(flex)
+			a
+				font-size: 27px
+				i
+					color: #BEBEBE
+			&.active
+				a
+					i
+						color: $orange
+
+.banner
+	height: 328px
+	position: relative
+	margin-bottom: -115px
+	overflow: hidden
+	@extend .bg-orange-gradient
+	.icon-bg
+		+position(absolute, 40px -18px null null)
+		i
+			font-size: 148px
+			color: rgba($white, .2)
+	.title
+		+display(flex)
+		padding-top: 57px
+		.icon
+			margin-right: 10px
+			margin-top: -16px
+		h6, p
+			color: $white
+		p
+			margin-top: 15px
+		i
+			font-size: 39px
+			color: $white

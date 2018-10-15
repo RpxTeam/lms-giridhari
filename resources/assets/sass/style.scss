@@ -59,7 +59,7 @@
     font-size: 18px;
     color: $white;
     font-family: $segoe;
-    margin-bottom: 20px;
+    margin-bottom: -2px;
     font-weight: 300;
     &:last-child {
       margin-bottom: 0;
@@ -115,7 +115,7 @@
   }
   form {
     background: $white;
-    @include padding(38px 21px 63px)
+    @include padding(38px 21px 63px);
   }
 }
 
@@ -124,6 +124,7 @@
   position: relative;
   .gridD {
     height: 100%;
+    @include margin(null 42px);
   }
   .steps {
     height: 100%;

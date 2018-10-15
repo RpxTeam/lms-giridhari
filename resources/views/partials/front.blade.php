@@ -13,4 +13,6 @@
         <link href="{{ url('/') }}/assets//css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
     </head>
     <body class="grey lighten-3">
-        @include('partials.loader')
+    @include('partials.loader')
+        <div id="main">
+            <div id="content-wrapper">
