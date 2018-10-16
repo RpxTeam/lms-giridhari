@@ -1,4 +1,4 @@
-{{-- <div id="loader" class="bg-orange-gradient">
+<div id="loader" class="bg-orange-gradient">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
@@ -8,4 +8,4 @@
         <p>Inspire…</p>
         <p>E respire…</p>
     </div>
-</div> --}}
+</div>
