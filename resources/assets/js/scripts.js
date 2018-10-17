@@ -40,3 +40,11 @@ $('.card-btn').on('click', function (e) {
     $(this).parent().parent().parent().find('.card-content').slideToggle();
     $(this).parent().parent().parent().find('.card-resume').slideToggle();
 });
+
+/**
+ * Sliders
+ */
+$('.slider-courses').slick({
+    arrows: false,
+    dots: true
+});

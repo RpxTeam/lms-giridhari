@@ -10,9 +10,11 @@
         <link rel="stylesheet" href="{{ url('assets') }}/libs/fontguirid/fontguirid.css">
         {{--<link href="{{ url('/') }}/css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
         {{--<link href="{{ url('/') }}/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
-        <link href="{{ url('/') }}/assets//css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+        <link href="{{ url('/') }}/assets/libs/slick/slick.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+        <link href="{{ url('/') }}/assets/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
     </head>
     <body class="grey lighten-3">
     @include('partials.loader')
+    @include('public.notifications')
         <div id="main">
             <div id="content-wrapper">

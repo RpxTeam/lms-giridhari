@@ -67,13 +67,13 @@ class LibraryController extends Controller
                 $diff->push($a);
             }
 
-            return view('library', compact('courses', 'mycourses', 'datacourses', 'trails','diff'));
+            return view('app.courses', compact('courses', 'mycourses', 'datacourses', 'trails','diff'));
 
         }
 
         $mycourses = collect();
 
-        return view('library', compact('courses', 'datacourses', 'trails', 'mycourses'));
+        return view('app.courses', compact('courses', 'datacourses', 'trails', 'mycourses'));
 
     }    
 
