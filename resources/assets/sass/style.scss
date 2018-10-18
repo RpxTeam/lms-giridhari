@@ -192,3 +192,59 @@
     }
   }
 }
+
+#profile-page {
+  .banner-infos {
+    background: url('../img/bg-infos.jpg') center center no-repeat;
+    background-size: cover;
+    .btn-top {
+      font-size: 18px;
+      color: $white;
+      @include position(absolute, 13px null null);
+      i {
+        color: $white
+      }
+      &.btn-notify {
+        right: 0;
+      }
+      &.btn-config {
+        left: 0;
+      }
+    }
+    .avatar {
+      padding-top: 32px;
+      .image {
+        display: block;
+        @include size(82px);
+        background-size: 100% auto;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid $white;
+        @include margin(null auto);
+      }
+    }
+    .name {
+      text-align: center;
+      margin-top: 12px;
+      h3 {
+        color: $white;
+      }
+    }
+    .points {
+      margin-top: 5px;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      color: $white;
+      i {
+        color: $white;
+        font-size: 17px;
+        margin-right: 5px;
+      }
+    }
+    .divider-horizontal {
+      margin-top: 20px;
+    }
+  }
+}

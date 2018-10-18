@@ -15,6 +15,9 @@
     </head>
     <body class="grey lighten-3">
     @include('partials.loader')
-    @include('public.notifications')
         <div id="main">
+            @if (!\Request::is('courses/*'))
+                @include('app.menu')
+            @endif
             <div id="content-wrapper">
+                @include('public.notifications')

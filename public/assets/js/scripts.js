@@ -48,4 +48,40 @@ $('.slider-courses').slick({
     arrows: false,
     dots: true
 });
+
+/**
+ * Navtabs
+ */
+$(document).ready(function() {
+    $('.navtabs-bar').each(function() {
+        position = $(this).parent().parent().find('li:first-child').position();
+        width = $(this).parent().parent().find('li:first-child').width();
+        $(this).css({
+            left: position.left,
+            width: width
+        });
+    })
+});
+
+$('.navtabs a').on('click', function (e) {
+    e.preventDefault();
+    position = $(this).position();
+    width = $(this).width();
+    tab = $(this).attr('data-tab');
+    bar = $(this).parent().parent().parent().find('.navtabs-bar');
+    bar.css({
+        left: position.left,
+        width: width
+    });
+
+    $(this).parent().parent().parent().parent().parent().find('.navtabs-content .tab-content').css({
+        display: 'none',
+        opacity: 0,
+        top: 20
+    });
+
+    $(this).parent().parent().parent().parent().parent().find('.navtabs-content .tab-content.'+tab).fadeIn(function () {
+        $(this).animate({'opacity': '1', 'top': 0}, 200);
+    });
+});
 //# sourceMappingURL=scripts.js.map
