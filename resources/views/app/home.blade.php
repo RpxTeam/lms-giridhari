@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="right">
-                            <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                            <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                         </div>
                     </div>
                     <div class="card-image big-image" data-bg="{{url('assets')}}/img/img-course.jpg"></div>
@@ -79,7 +79,7 @@
                 <div class="card-footer buttons">
                     <a href="#"><i class="icon-heart"></i></a>
                     <a href="#"><i class="icon-bookmark"></i></a>
-                    <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                    <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                 </div>
             </div>
             <div class="card">
@@ -104,7 +104,7 @@
                 <div class="card-footer buttons">
                     <a href="#"><i class="icon-heart"></i></a>
                     <a href="#"><i class="icon-bookmark"></i></a>
-                    <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                    <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                 </div>
             </div>
         </div>

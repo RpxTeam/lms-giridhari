@@ -248,3 +248,36 @@
     }
   }
 }
+
+#course-page {
+  .content {
+    padding-bottom: 60px;
+  }
+  .tab-content {
+    padding-top: 25px;
+    .gridD {
+      @include margin(null 35px);
+    }
+    &.avaliacoes {
+      padding-top: 19px;
+    }
+    &.conteudo {
+      padding-bottom: 60px;
+      .gridD {
+        @include margin(null 54px);
+      }
+      p {
+        padding-bottom: 15px;
+        line-height: em(22);
+        text-align: justify;
+        i {
+          font-size: 20px;
+          text-align: center;
+          &.icon-zen, &.icon-zen-1, &.icon-zen-1 {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}

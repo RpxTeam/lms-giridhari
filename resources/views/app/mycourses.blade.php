@@ -55,7 +55,7 @@
                 <div class="card-footer buttons">
                     <a href="#"><i class="icon-heart-o"></i></a>
                     <a href="#"><i class="icon-bookmark-o"></i></a>
-                    <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                    <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                 </div>
             </div>
             <div class="card">
@@ -93,7 +93,7 @@
                 <div class="card-footer buttons">
                     <a href="#"><i class="icon-heart"></i></a>
                     <a href="#"><i class="icon-bookmark"></i></a>
-                    <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                    <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                 </div>
             </div>
             <div class="card">
@@ -118,7 +118,7 @@
                 <div class="card-footer buttons">
                     <a href="#"><i class="icon-heart"></i></a>
                     <a href="#"><i class="icon-bookmark"></i></a>
-                    <a href="#"><i class="icon-arrow-left rotate180"></i></a>
+                    <a href="{{ url('/courses') }}/1"><i class="icon-arrow-left rotate180"></i></a>
                 </div>
             </div>
         </div>

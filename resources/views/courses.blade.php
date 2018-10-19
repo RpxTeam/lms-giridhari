@@ -4,12 +4,13 @@
      <div class="banner-course" data-bg="{{ url('assets') }}/img/img-course.jpg">
          <div class="gridD">
              <div class="back-button">
-                 <a href="{{ url()->previous() }}"><i class="icon-arrow-left"></i></a>
+                 <a href="{{ url('/library') }}"><i class="icon-arrow-left"></i></a>
              </div>
              <h1>A qualidade
                  <br>vem de dentro.</h1>
              <div class="rating">
                  <div class="stars">
+                     <i class="icon-star-o"></i>
                      <i class="icon-star-o"></i>
                      <i class="icon-star-o"></i>
                      <i class="icon-star-o"></i>
@@ -20,17 +21,19 @@
          </div>
      </div>
      <div class="infos-course">
-         <div class="info">
-             <i class="icon-tv"></i>
-             <span>5 módulos</span>
-         </div>
-         <div class="info">
-             <i class="icon-book"></i>
-             <span>15 atividades</span>
-         </div>
-         <div class="info">
-             <i class="icon-alarm-clock"></i>
-             <span>45 min</span>
+         <div class="gridD">
+             <div class="info">
+                 <i class="icon-tv"></i>
+                 <span>5 módulos</span>
+             </div>
+             <div class="info">
+                 <i class="icon-book"></i>
+                 <span>15 atividades</span>
+             </div>
+             <div class="info">
+                 <i class="icon-alarm-clock"></i>
+                 <span>45 min</span>
+             </div>
          </div>
      </div>
      <div class="content">
@@ -59,7 +62,9 @@
                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem dolores enim eos hic illo inventore iure libero magnam minima minus obcaecati optio pariatur porro quibusdam quos reiciendis, sapiente sint veritatis.
                          </p>
                      </div>
-                     <div class="intructors">
+                 </div>
+                 <div class="intructors">
+                     <div class="gridD">
                          <span>Instrutores:</span>
                          <p><span>Lore 1</span><span>Lore 2</span><span>Lore 3</span>.</p>
                      </div>
@@ -68,64 +73,70 @@
              <div class="tab-content avaliacoes">
                  <div class="number-rating">
                      <div class="stars">
-                         <div class="star-o"></div>
-                         <div class="star-o"></div>
-                         <div class="star-o"></div>
-                         <div class="star-o"></div>
-                         <div class="star"></div>
+                         <i class="icon-star-o"></i>
+                         <i class="icon-star-o"></i>
+                         <i class="icon-star-o"></i>
+                         <i class="icon-star-o"></i>
+                         <i class="icon-star"></i>
                      </div>
                      <p>4530 estão satisfeitas com esse curso.</p>
                  </div>
                  <div class="testimonials">
                      <div class="testimonial">
                          <div class="avatar">
-                             <div class="image"></div>
+                             <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
                          </div>
                          <div class="text">
                              <h6>Aluna Lore</h6>
-                             <div class="stars">
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star"></div>
-                                 <div class="star"></div>
-                                 <span>3/5</span>
+                             <div class="rating rating-grey">
+                                 <div class="stars">
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star"></i>
+                                     <i class="icon-star"></i>
+                                     <span>3/5</span>
+                                 </div>
                              </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                          </div>
                      </div>
                      <div class="testimonial">
                          <div class="avatar">
-                             <div class="image"></div>
+                             <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
                          </div>
                          <div class="text">
                              <h6>Aluna Lore</h6>
-                             <div class="stars">
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star"></div>
-                                 <div class="star"></div>
-                                 <span>3/5</span>
+                             <div class="rating rating-grey">
+                                 <div class="stars">
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star"></i>
+                                     <i class="icon-star"></i>
+                                     <span>3/5</span>
+                                 </div>
                              </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                          </div>
                      </div>
                      <div class="testimonial">
                          <div class="avatar">
-                             <div class="image"></div>
+                             <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
                          </div>
                          <div class="text">
                              <h6>Aluna Lore</h6>
-                             <div class="stars">
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star-o"></div>
-                                 <div class="star"></div>
-                                 <div class="star"></div>
-                                 <span>3/5</span>
+                             <div class="rating rating-grey">
+                                 <div class="stars">
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star-o"></i>
+                                     <i class="icon-star"></i>
+                                     <i class="icon-star"></i>
+                                     <span>3/5</span>
+                                 </div>
                              </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                          </div>
                      </div>
                  </div>
@@ -133,17 +144,62 @@
              <div class="tab-content conteudo">
                  <div class="gridD">
                      <p><i class="icon-lotus"></i></p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                      <p><i class="icon-zen-1"></i></p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                      <p><i class="icon-eye"></i></p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto.</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
                  </div>
              </div>
          </div>
      </div>
      <div class="btn-start">
-         <a href="#"><i class="icon-courses"></i>INICIAR CURSO</a>
+         @if (Auth::check())
+             <a href="{{ url('/courses') }}/start/1"><i class="icon-courses"></i>INICIAR CURSO</a>
+         @else
+             <a href="#modal-login" data-modal><i class="icon-courses"></i>INICIAR CURSO</a>
+         @endif
+     </div>
+ </div>
+
+ <div id="modal-login" class="modal">
+     <div class="mask"></div>
+     <div class="modal-content">
+         <div class="btn-close"><a href="#">X</a></div>
+         <div class="modal-content-wrapper">
+             <h4>Logue para continuar</h4>
+             <form class="form-horizontal"
+                   role="form"
+                   method="POST"
+                   action="{{ url('login') }}">
+                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                 <div class="input-field input-field-icon">
+                     <i class="icon-person"></i>
+                     <input type="email" class="input" name="email" value="{{ old('email') }}" placeholder="Usuário">
+                     {{--<input type="text" class="input">--}}
+                 </div>
+                 <div class="input-field input-field-icon">
+                     <i class="icon-padlock"></i>
+                     <input type="password" class="input" name="password" placeholder="Senha">
+                     <a href="#"><span class="icon-eye-o"></span></a>
+                 </div>
+                 <div class="forgotten-password">
+                     <a href="{{ route('auth.password.reset') }}" class="grey-text"><small>@lang('global.app_forgot_password')</small></a>
+                 </div>
+                 <div class="btns btns-center">
+                     <button type="submit" class="btn btn-grey btn-center">Entrar</button>
+                     <a href="{{ route('auth.register') }}" class="btn btn-orange btn-center">@lang('global.app_registration')</a>
+                 </div>
+                 <div class="remember-me">
+                     <a href="#" class="black-text"></a>
+                 </div>
+                 <label class="checkbox-container" class="black-text"><small>@lang('global.app_remember_me')</small>
+                     <input type="checkbox"
+                            name="remember">
+                     <span class="checkmark"></span>
+                 </label>
+             </form>
+         </div>
      </div>
  </div>
 

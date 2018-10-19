@@ -84,3 +84,17 @@ $('.navtabs a').on('click', function (e) {
         $(this).animate({'opacity': '1', 'top': 0}, 200);
     });
 });
+
+/**
+ * Modal
+ */
+$('[data-modal]').on('click', function(e){
+    e.preventDefault();
+    var modal = $(this).attr('href');
+    $(modal).fadeIn();
+});
+
+$('.btn-close a, .modal .mask').on('click', function(e) {
+    e.preventDefault();
+    $('.modal').fadeOut();
+});

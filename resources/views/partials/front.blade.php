@@ -16,7 +16,7 @@
     <body class="grey lighten-3">
     @include('partials.loader')
         <div id="main">
-            @if (!\Request::is('courses/*'))
+            @if (!\Request::is('courses/*') && \Request::is('login') && \Request::is('register'))
                 @include('app.menu')
             @endif
             <div id="content-wrapper">

@@ -18,7 +18,7 @@
             <div class="input-field input-field-icon">
                 <i class="icon-padlock"></i>
                 <input type="password" class="input" name="password" placeholder="Senha">
-                <a href="#"><span class="icon-eye-o"></span></a>
+                <a href="#"><i class="icon-eye-o"></i></a>
             </div>
             <div class="forgotten-password">
                 <a href="{{ route('auth.password.reset') }}" class="grey-text"><small>@lang('global.app_forgot_password')</small></a>

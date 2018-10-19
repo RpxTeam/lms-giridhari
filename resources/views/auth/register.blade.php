@@ -3,7 +3,7 @@
     <div id="register-page" class="bg-orange-gradient">
         <div class="gridD">
             <div class="back-button">
-                <a href="{{ url()->previous() }}"><i class="icon-arrow-left"></i></a>
+                <a href="{{ url('/login') }}"><i class="icon-arrow-left"></i></a>
             </div>
             <div id="logo">
                 <a href="{{ URL::to('/') }}">
