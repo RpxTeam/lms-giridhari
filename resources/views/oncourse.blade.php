@@ -1,60 +1,66 @@
  @include('partials.front')
 
+@foreach($lists as $list)
+    @endforeach
+<div class="title-panel" style="background-image: url('/images/background1.jpg');">
+
     <div class="container">
-        <div class="row">
-            <div class="col s1 black white-text">   
-                @foreach($datacourses as $datacourse)
-                    <!-- <sup>{{ number_format($datacourse->progress, 9) }} %</sup> -->
-                    <p>Progress: </p><h5>{{ number_format($datacourse->progress, 0) }} %</h5>
+        
+        <h2 class="page-title white-text">{{ $course->title }}</h2>
+
+        <a class="btn btn-floating waves-effect waves-light blue tooltipped" data-position="bottom" data-tooltip="Back to Course List"  href="{{ url('library') }}"><i class="material-icons">keyboard_return</i></a>
+            
+      
+    </div>
+    
+</div>
+
+<div class="charles grey lighten-2">
+    <div class="container"> 
+
+        <div class="card-course hoverable">
+            <!-- <div class="row">
+                <div class="col s12">
+                    <div class="ck">{!! $course->introduction !!}</div>                                       
+                </div>  
+            </div>     -->   
+            <div class="row">         
+                @foreach($lessons as $lesson)
+                    <div class="col s12">
+
+
+                        <div class="content">
+                            <h3>Lessons</h3>
+                            {{ $lessons->links() }}
+
+                            <div class="card-action">
+                                <a class="btn waves-effect waves-light black" href="{{ url('courses/done/'. $lesson->id) }}">Submit Lesson</a>
+                            </div>
+                            
+                            <h5>title</h5>
+                            <p>{{ $lesson->title }}</p>
+
+                            <h5>slug</h5>
+                            <p>{{ $lesson->slug }}</p>
+
+                            <h5>introduction</h5>
+                            <p>{{ $lesson->introduction }}</p>
+
+                            <h5>content</h5>
+                            <p>{{ $lesson->content }}</p>
+
+                            <h5>study_material</h5>
+                            <p>{{ $lesson->study_material }}</p>
+                        </div>
+                       
+                        
+
+                    </div>
                 @endforeach
             </div>
-            <div class="col s11">   
-                <h2 class="page-title">Course: {{ $course->title }}</h2>
-            </div>
+           
         </div>
-        <div class="row">
-            <div class="col s6">
-                {{ $course->title }}
-                {{ $course->description }}                
-            </div>            
-
-            <div class="col s6">
-                
-                <ul>
-                    <!-- <li><a href="{{ url('remove/'. $course->id) }}">Remover Curso</a></li> -->
-                    <!-- <li><a href="{{ url('end/'. $course->id) }}">Finalizar Curso</a></li> -->
-                </ul> 
-
-            </div>
-        </div>        
-
-        <div class="row"> 
-            @foreach($lessons as $lesson)
-                <div class="col s12">
-                   
-                    <h4>{{ $lesson->title }}</h4>
-                    <div>{{ $lesson->status }}</div>
-                    <div>{{ $lesson->slug }}</div>
-                    <div>{{ $lesson->introduction }}</div>
-                    <div>{{ $lesson->content }}</div>
-                    <div>{{ $lesson->study_material }}</div>
-                    
-                    <a style="width: 100%; margin-bottom: 5px;" class="btn waves-effect waves-light black" href="{{ url('done/'. $course->id) }}">Done</a>
-
-                    <hr>
-
-                </div>
-            @endforeach
-        </div>  
-
-        <div class="row"> 
-            <div class="col s12">  
-                <a href="{{ url('library') }}" class="btn black">@lang('global.app_back_to_list')</a>
-            </div>
-        </div>            
-       
 
     </div>
-
-
+</div>
  @include('partials.back')

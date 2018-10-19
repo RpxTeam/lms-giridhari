@@ -72,8 +72,8 @@ class CourseLessonSeed extends Seeder
 
         foreach ($items as $item) {
             DB::table('course_lesson')->insert([
-                'course_id' => $item['course_id'],
-                'lesson_id' => $item['lesson_id'],
+                'course_id' => $item["course_id"],
+                'lesson_id' => $item["lesson_id"],
             ]);
         };
     }

@@ -11,12 +11,8 @@
             </a>
             <!-- Sidebar toggle -->
             <!-- Logo -->
-            <a href="#!" class="brand-logo">
-                @if($generals->count() >= 1)
-                    <img src="{{url('/')}}/{{$generals[0]->site_logo}}" alt="Con">
-                @else
-                    <img src="{{ url('images') }}/Logo_RPX.png" alt="Con">
-                @endif
+            <a href="{{ URL::to('/') }}" class="brand-logo">
+                <img src="{{ url('images') }}/Logo_RPX.png" alt="Con">
             </a>
             <!-- /Logo -->
         </div>
@@ -336,4 +332,25 @@
         </div>
     </div>
 </aside>
+
+
+@if($request->segment(1) == 'home')
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large mdi-editor-mode-edit"></i>
+    </a>
+    <ul>
+        <li>
+            <a class="btn-floating red">
+                <i class="large mdi-av-my-library-books"></i>
+            </a>
+        </li>
+        <li>
+            <a class="btn-floating yellow darken-1">
+                <i class="large mdi-av-playlist-add"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+@endif
 

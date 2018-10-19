@@ -2,19 +2,32 @@
 // Route::get('/', function () { return redirect('/admin/home'); });
 
 Route::get('/', 'HomeController@index');
+Route::get('/speech', 'HomeController@speech');
+
 // Route::get('/library', 'LibraryController@index');
 Route::get('/library', 'LibraryController@index');
+Route::get('/guide', 'GuideController@index');
 
-Route::get('courses', ['uses' => 'CoursesController@index', 'as' => 'courses']);
-Route::get('courses/{id}', ['uses' => 'CoursesController@show', 'as' => 'courses.show']);
+Route::prefix('courses')->group(function(){
+    Route::get('', ['uses' => 'CoursesController@index', 'as' => 'courses']);
+    Route::get('{id}', ['uses' => 'CoursesController@show', 'as' => 'courses.show']);
+    Route::get('start/{id}', 'CoursesController@start');
+    Route::get('add/{id}', 'CoursesController@add');
+    Route::get('remove/{id}', 'CoursesController@remove');
+    Route::get('certificate/{id}', 'CoursesController@certificate'); 
+    Route::get('done/{id}', 'CoursesController@done');
+});
 
-Route::get('start/{id}', 'CoursesController@start');   
-Route::get('add/{id}', 'CoursesController@add');   
-Route::get('remove/{id}', 'CoursesController@remove');
-Route::get('certificate/{id}', 'CoursesController@certificate'); 
-Route::get('done/{id}', 'CoursesController@done');   
+Route::prefix('trails')->group(function(){
+    Route::get('', ['uses' => 'TrailsController@index', 'as' => 'trail']);
+    Route::get('{id}', ['uses' => 'TrailsController@show', 'as' => 'trail.show']);
+    Route::get('start/{id}', 'TrailsController@start');
+    Route::get('add/{id}', 'TrailsController@add');
+    Route::get('remove/{id}', 'TrailsController@remove');
+    Route::get('certificate/{id}', 'TrailsController@certificate'); 
+    Route::get('done/{id}', 'TrailsController@done');
+});
 
-Route::get('/courses/{id}', 'CoursesController@show');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 // Authentication Routes...
@@ -121,13 +134,27 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('datalessons_restore/{id}', ['uses' => 'Admin\DatalessonsController@restore', 'as' => 'datalessons.restore']);
     Route::delete('datalessons_perma_del/{id}', ['uses' => 'Admin\DatalessonsController@perma_del', 'as' => 'datalessons.perma_del']);
 
+
+    Route::resource('tests', 'Admin\TestsController');
+    Route::resource('roles', 'Admin\RolesController');
+    Route::resource('topics', 'Admin\TopicsController');
+    Route::resource('questions', 'Admin\QuestionsController');
+    Route::resource('questions_options', 'Admin\QuestionsOptionsController');
+    Route::resource('results', 'Admin\ResultsController');
+
+    Route::post('topics_mass_destroy', ['uses' => 'Admin\TopicsController@massDestroy', 'as' => 'topics.mass_destroy']);
+    Route::post('questions_mass_destroy', ['uses' => 'Admin\QuestionsController@massDestroy', 'as' => 'questions.mass_destroy']);
+    Route::post('questions_options_mass_destroy', ['uses' => 'Admin\QuestionsOptionsController@massDestroy', 'as' => 'questions_options.mass_destroy']);
+    Route::post('results_mass_destroy', ['uses' => 'Admin\ResultsController@massDestroy', 'as' => 'results.mass_destroy']);
+
     Route::model('messenger', 'App\MessengerTopic');
     Route::get('messenger/inbox', 'Admin\MessengerController@inbox')->name('messenger.inbox');
     Route::get('messenger/outbox', 'Admin\MessengerController@outbox')->name('messenger.outbox');
     Route::resource('messenger', 'Admin\MessengerController');
 
     Route::get('testimonal', 'HomeController@testimonal');
-    Route::post('savefeedback', 'HomeController@savefeedback')->name('savefeedback');
+    Route::post('savecoursefeedback', 'HomeController@savecoursefeedback')->name('savecoursefeedback');
+    Route::post('savetrailfeedback', 'HomeController@savetrailfeedback')->name('savetrailfeedback');
 
     Route::get('search', 'MegaSearchController@search')->name('mega-search');
     Route::get('language/{lang}', function ($lang) {

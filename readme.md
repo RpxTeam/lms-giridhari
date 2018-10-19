@@ -1,5 +1,5 @@
-# LMS - Giridhari Das
-### RPX v2
+# LMS - Giridhari
+### v1.0
 
 Prepare your .env file there with database connection and other settings.
 

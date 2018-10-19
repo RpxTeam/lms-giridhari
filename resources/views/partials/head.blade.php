@@ -30,11 +30,12 @@
 {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet">--}}
 <link href="{{ url('libs/dashboard/dashboard-icons.css') }}" rel="stylesheet">
 <link href="{{ url('libs/dashboard/dashboard.css') }}" rel="stylesheet">
-@if($generals)
-    @foreach($generals as $general)
-        <link href="{{ url('libs/dashboard/colors/') }}/color-{{$general->theme_color}}.css" rel="stylesheet">
-    @endforeach
-@endif
+    @if($generals->count() > 0)
+        @foreach($generals as $general)
+            <link href="{{ url('libs/dashboard/colors/') }}/color-{{$general->theme_color}}.css" rel="stylesheet">
+        @endforeach
+    @endif
+
 <!-- <link href="{{ url('adminlte/css/AdminLTE.min.css') }}" rel="stylesheet"> -->
 <!-- <link href="{{ url('adminlte/css/skins/skin-blue.min.css') }}" rel="stylesheet"> -->
 {{--<link rel="stylesheet"--}}
@@ -51,3 +52,4 @@
 <link href="{{ url('libs/draggable/sidebar.css') }}" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <link href="{{ url('custom/admin.css') }}" rel="stylesheet">
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
