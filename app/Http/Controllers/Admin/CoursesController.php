@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Course;
+use App\Coursescertificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,7 @@ use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+
 class CoursesController extends Controller
 {
     use FileUploadTrait;
@@ -180,8 +182,32 @@ class CoursesController extends Controller
         if (! Gate::allows('course_create')) {
             return abort(401);
         }
+
+        if($request->slug == null){
+            $slug = str_slug($request->title);
+        }else{
+            $slug = $request->slug;
+        }
+        
+        if($request->order == null){
+            $order = (DB::table('courses')->count())+1;
+        }else{
+            $order = $request->order;
+        }
+        
         $request = $this->saveFiles($request);
-        $course = Course::create($request->all());
+        $course = Course::create([
+            'order' => $order,
+            'title' => $request->title,
+            'slug' => $slug,
+            'description' => $request->description,
+            'introduction' => $request->introduction,
+            'featured_image' => $request->featured_image,
+            'duration' => $request->duration,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'approved' => $request->approved,
+        ]);
         $course->instructor()->sync(array_filter((array)$request->input('instructor')));
         $course->lessons()->sync(array_filter((array)$request->input('lessons')));
         $course->categories()->sync(array_filter((array)$request->input('categories')));
@@ -190,9 +216,9 @@ class CoursesController extends Controller
         DB::table('coursescertificates')
         ->insert([
             'id'=> $course->id,
-            'order'=> $course->id,
+            'order'=> $order,
             'title'=> $course->title,
-            'slug'=> $course->title,
+            'slug'=> $slug,
             'updated_at' => $course->updated_at,
             'created_at' => $course->created_at,
         ]);
@@ -240,15 +266,40 @@ class CoursesController extends Controller
         if (! Gate::allows('course_edit')) {
             return abort(401);
         }
+        
+        $slug = str_slug($request->title);
+        
+        if($request->order == null){
+            $order = (DB::table('courses')->count())+1;
+        }else{
+            $order = $request->order;
+        }
+
         $request = $this->saveFiles($request);
         $course = Course::findOrFail($id);
-        $course->update($request->all());
+        $course->update([
+            'order' => $order,
+            'title' => $request->title,
+            'slug' => $slug,
+            'description' => $request->description,
+            'introduction' => $request->introduction,
+            'featured_image' => $request->featured_image,
+            'duration' => $request->duration,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'approved' => $request->approved,
+        ]);
         $course->instructor()->sync(array_filter((array)$request->input('instructor')));
         $course->lessons()->sync(array_filter((array)$request->input('lessons')));
         $course->categories()->sync(array_filter((array)$request->input('categories')));
         $course->tags()->sync(array_filter((array)$request->input('tags')));
 
-
+        DB::table('coursescertificates')
+        ->where('id',$id)
+        ->update([
+            'title' => $request->title,
+            'slug' => $slug,
+        ]);
 
         return redirect()->route('admin.courses.index');
     }
@@ -273,10 +324,11 @@ class CoursesController extends Controller
         $categories = \App\Coursecategory::get()->pluck('title', 'id');
 
         $tags = \App\Coursetag::get()->pluck('title', 'id');
-$datacourses = \App\Datacourse::where('course_id', $id)->get();$trails = \App\Trail::whereHas('courses',
-                    function ($query) use ($id) {
-                        $query->where('id', $id);
-                    })->get();
+        $datacourses = \App\Datacourse::where('course_id', $id)->get();
+        $trails = \App\Trail::whereHas('courses',
+            function ($query) use ($id) {
+                $query->where('id', $id);
+            })->get();
 
         $course = Course::findOrFail($id);
 
@@ -299,6 +351,9 @@ $datacourses = \App\Datacourse::where('course_id', $id)->get();$trails = \App\Tr
         }
         $course = Course::findOrFail($id);
         $course->delete();
+
+        $certificate = Coursescertificate::findOrFail($id);
+        $certificate->delete();
 
         return back();
     }
@@ -337,6 +392,9 @@ $datacourses = \App\Datacourse::where('course_id', $id)->get();$trails = \App\Tr
         $course = Course::onlyTrashed()->findOrFail($id);
         $course->restore();
 
+        $certificate = Coursescertificate::onlyTrashed()->findOrFail($id);
+        $certificate->restore();
+
         return redirect()->route('admin.courses.index');
     }
 
@@ -353,6 +411,9 @@ $datacourses = \App\Datacourse::where('course_id', $id)->get();$trails = \App\Tr
         }
         $course = Course::onlyTrashed()->findOrFail($id);
         $course->forceDelete();
+
+        $certificate = Coursescertificate::onlyTrashed()->findOrFail($id);
+        $certificate->forceDelete();
 
         return redirect()->route('admin.courses.index');
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Trail;
+use App\Trailscertificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
@@ -161,12 +162,42 @@ class TrailsController extends Controller
         if (! Gate::allows('trail_create')) {
             return abort(401);
         }
-        $trail = Trail::create($request->all());
+        if($request->slug == null){
+            $slug = str_slug($request->title);
+        }else{
+            $slug = $request->slug;
+        }
+        
+        if($request->order == null){
+            $order = (DB::table('trails')->count())+1;
+        }else{
+            $order = $request->order;
+        }
+
+        $trail = Trail::create([
+            'order' => $order,
+            'title' => $request->title,
+            'slug' => $slug,
+            'description' => $request->description,
+            'introduction' => $request->introduction,
+            'featured_image' => $request->featured_image,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'approved' => $request->approved,
+        ]);
         $trail->courses()->sync(array_filter((array)$request->input('courses')));
         $trail->categories()->sync(array_filter((array)$request->input('categories')));
         $trail->tags()->sync(array_filter((array)$request->input('tags')));
 
-
+        DB::table('trailscertificates')
+        ->insert([
+            'id'=> $trail->id,
+            'order'=> $order,
+            'title'=> $trail->title,
+            'slug'=> $slug,
+            'updated_at' => $trail->updated_at,
+            'created_at' => $trail->created_at,
+        ]);
 
         return redirect()->route('admin.trails.index');
     }
@@ -210,13 +241,37 @@ class TrailsController extends Controller
         if (! Gate::allows('trail_edit')) {
             return abort(401);
         }
+
+        $slug = str_slug($request->title);
+        
+        if($request->order == null){
+            $order = (DB::table('trails')->count())+1;
+        }else{
+            $order = $request->order;
+        }
+
         $trail = Trail::findOrFail($id);
-        $trail->update($request->all());
+        $trail->update([
+            'order' => $order,
+            'title' => $request->title,
+            'slug' => $slug,
+            'description' => $request->description,
+            'introduction' => $request->introduction,
+            'featured_image' => $request->featured_image,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'approved' => $request->approved,
+        ]);
         $trail->courses()->sync(array_filter((array)$request->input('courses')));
         $trail->categories()->sync(array_filter((array)$request->input('categories')));
         $trail->tags()->sync(array_filter((array)$request->input('tags')));
 
-
+        DB::table('trailscertificates')
+        ->where('id',$id)
+        ->update([
+            'title' => $request->title,
+            'slug' => $slug,
+        ]);
 
         return redirect()->route('admin.trails.index');
     }
@@ -263,6 +318,9 @@ $datatrails = \App\Datatrail::where('trail_id', $id)->get();
         $trail = Trail::findOrFail($id);
         $trail->delete();
 
+        $certificate = Trailscertificate::findOrFail($id);
+        $certificate->delete();
+
         return redirect()->route('admin.trails.index');
     }
 
@@ -300,6 +358,9 @@ $datatrails = \App\Datatrail::where('trail_id', $id)->get();
         $trail = Trail::onlyTrashed()->findOrFail($id);
         $trail->restore();
 
+        $certificate = Trailscertificate::onlyTrashed()->findOrFail($id);
+        $certificate->restore();
+
         return redirect()->route('admin.trails.index');
     }
 
@@ -316,6 +377,9 @@ $datatrails = \App\Datatrail::where('trail_id', $id)->get();
         }
         $trail = Trail::onlyTrashed()->findOrFail($id);
         $trail->forceDelete();
+
+        $certificate = Trailscertificate::onlyTrashed()->findOrFail($id);
+        $certificate->forceDelete();
 
         return redirect()->route('admin.trails.index');
     }

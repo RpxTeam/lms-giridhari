@@ -1283,8 +1283,8 @@ conApp.initMaterialPlugins = function() {
     // init datepicker
     if(typeof $.fn.pickadate !== 'undefined') {
         $('.datepicker').pickadate({
-            format: 'd/mm/yyyy',
-            formatSubmit: 'd/mm/yyyy'
+            format: 'dd/mm/yyyy',
+            formatSubmit: 'dd/mm/yyyy'
         });
     }
 

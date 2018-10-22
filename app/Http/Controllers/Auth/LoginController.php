@@ -55,7 +55,7 @@ class LoginController extends Controller
             $user = User::where('email', '=', $social_user->getEmail())->first();
             if (!is_null($user)) {
                 Auth::login($user);
-                return redirect($this->redirectPath());
+                return redirect($this->redirectPath())->back();
             } else {
                 return redirect()->back()->withErrors(trans('auth.failed'));
             }
