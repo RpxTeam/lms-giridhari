@@ -147,6 +147,62 @@
                             <i class="icon-arrow-top rotate90"></i>
                         </span>
                     </a>
+                    <a href="{{ url('/library') }}" class="collection-item">
+                        <span class="left">
+                            <div class="icon">
+                                <i class="icon-courses"></i>
+                            </div>
+                            <div class="info">
+                                <p>Iniciou o curso Lore 1</p>
+                                <p><small>A uma hora atras</small></p>
+                            </div>
+                        </span>
+                        <span class="icon-right">
+                            <i class="icon-arrow-top rotate90"></i>
+                        </span>
+                    </a>
+                    <a href="{{ url('/library') }}" class="collection-item">
+                        <span class="left">
+                            <div class="icon">
+                                <i class="icon-courses success"></i>
+                            </div>
+                            <div class="info">
+                                <p>Concluiu o curso Lore 1</p>
+                                <p><small>A uma hora atras</small></p>
+                            </div>
+                        </span>
+                        <span class="icon-right">
+                            <i class="icon-arrow-top rotate90"></i>
+                        </span>
+                    </a>
+                    <a href="{{ url('/library') }}" class="collection-item">
+                        <span class="left">
+                            <div class="icon">
+                                <i class="icon-bookmark-o"></i>
+                            </div>
+                            <div class="info">
+                                <p>Salvou o curso Lore 1</p>
+                                <p><small>A uma hora atras</small></p>
+                            </div>
+                        </span>
+                        <span class="icon-right">
+                            <i class="icon-arrow-top rotate90"></i>
+                        </span>
+                    </a>
+                    <a href="{{ url('/library') }}" class="collection-item">
+                        <span class="left">
+                            <div class="icon">
+                                <i class="icon-courses"></i>
+                            </div>
+                            <div class="info">
+                                <p>Iniciou o curso Lore 1</p>
+                                <p><small>A uma hora atras</small></p>
+                            </div>
+                        </span>
+                        <span class="icon-right">
+                            <i class="icon-arrow-top rotate90"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
             <div class="tab-content certificados">

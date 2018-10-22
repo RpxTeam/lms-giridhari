@@ -19,9 +19,9 @@ Route::get('/home', function(){
 Route::get('/my-courses', function(){
   return view('app.mycourses', ['name' => 'My Courses']);
 });
-//Route::get('/courses', function(){
-//  return view('app.courses',['name' => 'courses']);
-//});
+Route::get('/lesson', function(){
+  return view('app.lesson',['name' => 'lesson']);
+});
 Route::get('/profile', function(){
   return view('app.profile', ['name' => 'profile']);
 });
