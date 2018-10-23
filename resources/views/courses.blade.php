@@ -165,7 +165,7 @@
  <div id="modal-login" class="modal">
      <div class="mask"></div>
      <div class="modal-content">
-         <div class="btn-close"><a href="#">X</a></div>
+         <div class="btn-close"><a href="#"></a></div>
          <div class="modal-content-wrapper">
              <h4>Logue para continuar</h4>
              <form class="form-horizontal"

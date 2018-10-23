@@ -149,6 +149,7 @@ small
 	a
 		opacity: .54
 		@extend %transition
+		display: block
 		i
 			color: $white
 		&:hover
@@ -238,6 +239,7 @@ a.btn
 	height: 60px
 	text-align: center
 	background: $orange1
+	text-transform: uppercase
 	a
 		height: 100%
 		color: $white
@@ -248,6 +250,13 @@ a.btn
 			color: $white
 			font-size: 20px
 			margin-right: 8px
+		&[disabled]
+			background: #DDDDDD
+			pointer-events: none
+		&.success
+			background: $green
+		&.error
+			background: $red
 
 .checkbox
 	+size(16px)
@@ -542,8 +551,10 @@ a.btn
 	background: $orange1
 	text-align: center
 	+padding(22px null)
-	+position(absolute, 0 0 null 0)
-	z-index: 10
+	+position(fixed, 0 0 null 0)
+	z-index: 101
+	@extend %transition
+	top: -100px
 	span
 		font-size: 13px
 		color: $white
@@ -779,6 +790,7 @@ a.btn
 
 .modal
 	+position(fixed, 0)
+	z-index: 100
 	display: none
 	.mask
 		+position(absolute, 0)
@@ -790,8 +802,9 @@ a.btn
 		text-align: right
 		+padding(14px 24px null)
 		a
+			+size(14px)
 			display: inline-block
-			color: $grey
+			background: url('../img/icons/close.png') center center no-repeat
 	.modal-content
 		width: 90%
 		+position(absolute, 50% null null 50%)
@@ -801,8 +814,11 @@ a.btn
 		-webkit-border-radius: 4px
 		-moz-border-radius: 4px
 		border-radius: 4px
+		margin-top: -30px
+		@extend %transition
 		.modal-content-wrapper
 			+padding(21px 24px 35px)
+			@extend %transition
 	.remember-me
 		margin-top: 30px
 
@@ -850,6 +866,7 @@ a.btn
 		+margin(null 15px)
 .lesson
 	box-shadow: 0 1px 2px rgba($black, .4)
+	background: $white
 	+display(flex)
 	+align-items(center)
 	+justify-content(space-between)
@@ -893,6 +910,7 @@ a.btn
 	+padding(17px 5px)
 	.gridD
 		+display(flex)
+		+align-items(center)
 		.icon
 			+size(40px)
 			min-width: 40px
@@ -915,3 +933,118 @@ a.btn
 	p
 		line-height: em(22)
 		padding-bottom: 17px
+
+.radio-container
+	display: block
+	position: relative
+	cursor: pointer
+	font-size: 14px
+	font-weight: 400
+	+user-select(none)
+	+display(flex)
+	+flex-direction(row-reverse)
+	+justify-content(flex-end)
+	+align-items(center)
+	+padding(9px null)
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+
+
+.checkmark
+	+position(relative, 0 null null 0)
+	display: block
+	+size(20px)
+	border: 2px solid $lightOrange
+	background-color: #eee
+	border-radius: 50%
+	margin-right: 9px
+
+.radio-container:hover input ~ .checkmark
+	background-color: #ccc
+
+.radio-container input:checked ~ .checkmark
+	background-color: $lightOrange
+
+.checkmark:after 
+	content: ""
+	position: absolute
+	display: none
+
+.radio-container input:checked ~ .checkmark:after
+	display: block
+
+.radio-container .checkmark:after
+	+position(null, 50% null null 50%)
+	+transform(translate(-50%, -50%))
+	border: 3px solid $white
+	+size(13px)
+	border-radius: 50%
+	background: $lightOrange
+
+.question
+	border-bottom: 1px solid rgba(#707070, .2)
+	+padding(30px null)
+
+#modal-conclusion
+	text-align: center
+	.title
+		margin-bottom: 24px
+		.icon
+			position: relative
+			display: inline-block
+			i
+				font-size: 92px
+			.icon-check
+				+position(absolute, 34px -26px null null)
+				@extend .circle
+				+size(40px)
+				display: inline-block
+				background: url('../img/icons/check.png') center center no-repeat $white
+				background-size: 100% auto
+	p
+		font-weight: 500
+		color: rgba(#000000, .87)
+		margin-bottom: 16px
+		&.orange
+			color: #FF9800
+	.line
+		background: #707070
+		opacity: .21
+		+size(100% 1px)
+		display: block
+		margin-bottom: 25px
+	.results
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		+margin(18px null)
+		i
+			margin-right: 5px
+			font-size: 18px
+	.stars-rating
+		ul > li.star.hover > i
+			color: #FFCC36
+		ul
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			li
+				display: inline-block
+				margin-right: 5px
+				a
+					display: block
+					font-size: 20px
+					&:last-child
+						margin-right: 0
+				i
+					color: #DDDDDD
+			> li
+				&.star
+					&.hover
+						i
+							color: $lightOrange
+					&.selected
+						i
+							color: $orange
