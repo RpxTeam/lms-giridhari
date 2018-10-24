@@ -17,6 +17,7 @@ class Create1537295888DatatrailsTable extends Migration
                 $table->increments('id');
                 $table->integer('view')->nullable();
                 $table->float('progress', 10 , 5)->nullable();
+                $table->date('complete_date')->nullable();
                 $table->integer('rating')->nullable();
                 $table->text('testimonal')->nullable();
                 

@@ -191,7 +191,10 @@ class TrailsController extends Controller
             DB::table('datatrails')
              ->where("datatrails.user_id", '=',  $user)
              ->where("datatrails.trail_id", '=',  $id)
-            ->update(['datatrails.certificate_id' => $id]);
+            ->update([
+                'datatrails.certificate_id' => $id,
+                'datatrails.complete_date'=> date('Y-m-d'),
+            ]);
 
         }
 

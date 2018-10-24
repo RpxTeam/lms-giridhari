@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Datacourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
@@ -196,7 +197,10 @@ class CoursesController extends Controller
             DB::table('datacourses')
              ->where("datacourses.user_id", '=',  $user)
              ->where("datacourses.course_id", '=',  $id)
-            ->update(['datacourses.certificate_id' => $id]);
+            ->update([
+                'datacourses.certificate_id' => $id,
+                'datacourses.complete_date'=> date('Y-m-d'),
+            ]);
 
         }
 
@@ -279,41 +283,36 @@ class CoursesController extends Controller
             return redirect('login');
         }
         
+        
         $user = Auth::id();
-
-        /*        DB::table('datacourses')->insert([
-                    'view'=>'1',
-                    'progress'=>'100',
-                    'rating'=>'5',
-                    'user_id'=>$user,
-                    'course_id'=>$id,
-                ]);
-        */
-
-        $course = DB::table('courses')
+                                          
+        $course = DB::table('courses')       
             ->leftJoin('datacourses', 'course_id', '=', 'courses.id')
             ->leftJoin('users', 'user_id', '=', 'users.id')
             ->where("datacourses.course_id", '=',  $id)
             ->where("datacourses.user_id", '=',  $user)
-            ->limit(1)
-            ->get();
+            ->first();
         
-        if($course[0]->progress == 100){
+        $instructor = DB::table('course_user')
+            ->leftJoin('users','user_id','=','users.id')
+            ->where('course_user.course_id','=',$id)
+            ->first();
+            
+        $certificate = DB::table('coursescertificates')
+            ->where('id','=',$id)
+            ->first();
+        
 
-            $count = DB::table('coursescertificates')->count();
+        if($course != null){
+            if($course->progress == 100){
 
-            DB::table('coursescertificates')->insert([
-                'order'=>$count++,
-                'title'=>$course[0]->title,
-                'slug'=>$course[0]->name,
-            ]);
+                return view('coursecertificate', compact('course','instructor','certificate'));
 
-            return view('courses/certificate', compact('course'));
-
+            }else{
+                return redirect('library');
+            }
         }else{
-
-        return redirect('library');
-
+            return redirect('library');
         }
     }
 
