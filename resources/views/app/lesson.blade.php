@@ -50,15 +50,15 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, </p>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz1">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz1">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz1">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                 </div>
             </div>
@@ -67,15 +67,15 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, </p>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz2">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz2">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz2">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                 </div>
             </div>
@@ -84,15 +84,15 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, </p>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz3">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz3">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                     <label class="radio-container">Four
                         <input type="radio" name="quiz3">
-                        <span class="checkmark"></span>
+                        <span class="checkmark-radio"></span>
                     </label>
                 </div>
             </div>

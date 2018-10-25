@@ -10,7 +10,7 @@ Route::get('/guide', 'GuideController@index');
 
 // Guiridhari Routes
 Route::get('/', function() {
-  return redirect('/home');
+  return redirect('/login');
 });
 Route::get('/introduction', 'IntroductionController@index');
 Route::get('/home', function(){

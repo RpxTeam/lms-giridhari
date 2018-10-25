@@ -164,9 +164,14 @@ small
 	+position(absolute, 50% null null 10px)
 	+transform(translateY(-50%))
 
-.input-field.input-field-icon a 
+.input-field.input-field-icon a
 	left: auto
-	right: 23px
+	right: 15px
+
+.input-field.input-field-icon a i
+  position: relative
+  left: auto
+  right: auto
 
 .input-field.input-field-icon input
 	padding-left: 27px
@@ -952,7 +957,7 @@ a.btn
 		cursor: pointer
 
 
-.checkmark
+.checkmark-radio
 	+position(relative, 0 null null 0)
 	display: block
 	+size(20px)
@@ -961,21 +966,21 @@ a.btn
 	border-radius: 50%
 	margin-right: 9px
 
-.radio-container:hover input ~ .checkmark
+.radio-container:hover input ~ .checkmark-radio
 	background-color: #ccc
 
-.radio-container input:checked ~ .checkmark
+.radio-container input:checked ~ .checkmark-radio
 	background-color: $lightOrange
 
-.checkmark:after 
+.checkmark-radio:after
 	content: ""
 	position: absolute
 	display: none
 
-.radio-container input:checked ~ .checkmark:after
+.radio-container input:checked ~ .checkmark-radio:after
 	display: block
 
-.radio-container .checkmark:after
+.radio-container .checkmark-radio:after
 	+position(null, 50% null null 50%)
 	+transform(translate(-50%, -50%))
 	border: 3px solid $white
