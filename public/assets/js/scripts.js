@@ -36,16 +36,32 @@ window.onload = function(){
     var imageObj = new Image();
     imageObj.onload = function(){
         context.drawImage(imageObj, 0, 0);
-        context.font = "16pt Calibri";
-        context.fillStyle = '#000';
-        context.fillText(document.getElementById("name").innerHTML, 150, 150);
-        context.fillText(document.getElementById("title").innerHTML, 150, 180);
-        context.fillText(document.getElementById("date").innerHTML, 150, 210);
-        context.fillText(document.getElementById("instructor").innerHTML, 150, 240);
+        context.fillStyle = '#606060';
+        context.font = "40pt Vollkorn";
+        context.fillText(document.getElementById("name").innerHTML, 400, 380);
+        context.fillStyle = '#FFF';
+        context.font = "20pt Vollkorn";
+        context.fillText(document.getElementById("title").innerHTML, 45, 250);
+        context.fillStyle = '#FFF';
+        context.font = "20pt Vollkorn";
+        context.fillText(document.getElementById("date").innerHTML, 45, 280);
+        context.fillStyle = '#606060';
+        context.font = "20pt Vollkorn";
+        context.fillText(document.getElementById("instructor").innerHTML, 225, 520);
+        // context.fillText(document.getElementById("instructor").innerHTML, 435, 520);
+        context.fillStyle = '#606060';
+        context.font = "10pt Vollkorn";
+        context.fillText(document.getElementById("text1").innerHTML, 120, 430);
+        context.fillStyle = '#606060';
+        context.font = "10pt Vollkorn";
+        context.fillText(document.getElementById("text2").innerHTML, 120, 445);
+        context.fillStyle = '#606060';
+        context.font = "10pt Vollkorn";
+        context.fillText(document.getElementById("text3").innerHTML, 120, 460);
     };
     
-    // imageObj.src = document.getElementById("img").src; 
-    imageObj.src = "https://uniqlo.scene7.com/is/image/UNIQLO/goods_55_404137?$prod$"; 
+    imageObj.src = document.getElementById("img").src; 
+    // imageObj.src = "https://uniqlo.scene7.com/is/image/UNIQLO/goods_55_404137?$prod$"; 
 };
 
 /**
