@@ -32,7 +32,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 
  @include('partials.back')
