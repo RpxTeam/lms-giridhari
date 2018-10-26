@@ -1,5 +1,5 @@
 # LMS - Giridhari
-### v1.0
+### v1.00
 
 Prepare your .env file there with database connection and other settings.
 
