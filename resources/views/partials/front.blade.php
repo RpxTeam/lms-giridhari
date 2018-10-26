@@ -10,7 +10,14 @@
         <link rel="stylesheet" href="{{ url('assets') }}/libs/fontguirid/fontguirid.css">
         {{--<link href="{{ url('/') }}/css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
         {{--<link href="{{ url('/') }}/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>--}}
-        <link href="{{ url('/') }}/assets//css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+        <link href="{{ url('/') }}/assets/libs/slick/slick.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+        <link href="{{ url('/') }}/assets/css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
     </head>
     <body class="grey lighten-3">
         @include('partials.loader')
+        <div id="main">
+            @if (\Request::is('my-courses') || \Request::is('profile') || \Request::is('library') || \Request::is('home'))
+                @include('app.menu')
+            @endif
+            <div id="content-wrapper">
+                @include('public.notifications')

@@ -1,12 +1,30 @@
 <?php
 // Route::get('/', function () { return redirect('/admin/home'); });
 
-Route::get('/', 'HomeController@index');
+//Route::get('/', 'HomeController@index');
 Route::get('/speech', 'HomeController@speech');
 
 // Route::get('/library', 'LibraryController@index');
 Route::get('/library', 'LibraryController@index');
 Route::get('/guide', 'GuideController@index');
+
+// Guiridhari Routes
+Route::get('/', function() {
+  return redirect('/home');
+});
+Route::get('/introduction', 'IntroductionController@index');
+Route::get('/home', function(){
+  return view('app.home',['name' => 'home']);
+});
+Route::get('/my-courses', function(){
+  return view('app.mycourses', ['name' => 'My Courses']);
+});
+Route::get('/lesson', function(){
+  return view('app.lesson',['name' => 'lesson']);
+});
+Route::get('/profile', function(){
+  return view('app.profile', ['name' => 'profile']);
+});
 
 Route::prefix('courses')->group(function(){
     Route::get('', ['uses' => 'CoursesController@index', 'as' => 'courses']);

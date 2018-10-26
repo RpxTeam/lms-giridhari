@@ -19,6 +19,11 @@ elixir(function(mix) {
         .sass(['style.scss'], 'public/assets/css/style.css')
         .scripts(['scripts.js'], 'public/assets/js/scripts.js')
         .browserSync({
-            proxy: 'localhost:8000'
+            proxy: 'localhost:8000',
+            files: [
+                './resources/views/**/*.blade.php',
+                './resources/assets/**/*.sass',
+                './resources/assets/**/*.scss',
+            ]
         })
 });

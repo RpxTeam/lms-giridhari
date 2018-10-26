@@ -1,7 +1,7 @@
 @import "components/bourbon/bourbon"
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900')
 
-@include font-face('SegoeUI', "../fonts/SegoeUI")
++font-face('SegoeUI', "../fonts/SegoeUI")
 
 $segoe: 'Segoe UI', Helvetica, Arial, sans-serif
 $roboto: 'Roboto', sans-serif
@@ -9,18 +9,21 @@ $roboto: 'Roboto', sans-serif
 //  COLORS
 $white: #FFFFFF
 $black: #3D3D3D
+$blackText: #707070
 $grey: #969696
 $lightGrey: #EEEEEE
 $orange: #FF7933
+$orange1: #FF891D
 $lightOrange: #FF9100
 $green: #2EC600
+$red: #E60000
 
 // EXTENDS CLASSES
 %transition
-	@include transition(all .4s linear)
+	+transition(all .4s linear)
 .circle
-	@include border-top-radius(50%)
-	@include border-bottom-radius(50%)
+	+border-top-radius(50%)
+	+border-bottom-radius(50%)
 %blockCenter
 	margin-left: auto
 	margin-right: auto
@@ -44,6 +47,8 @@ $browser-context: 14 // Default
 	margin: 0
 	text-decoration: none
 
+h1, h2, h3, h4, h5, h6
+	font-weight: 400
 h1
 	font-size: em(36)
 h2
@@ -62,71 +67,152 @@ html, body
 	font-family: $roboto
 	font-size: 14px
 
+body
+	overflow: hidden
+
+#main
+	height: 100%
+	+display(flex)
+	+flex-direction(column)
+
+#content-wrapper
+	flex: 1 1 auto
+	position: relative
+	overflow-y: auto
+
 .gridD
 	max-width: 100%
-	+padding(null 45px)
+	+margin(null 19px)
 	position: relative
+
+p
+	font-weight: 300
+	color: $blackText
+	line-height: 1.2em
 
 small
 	font-size: em(12)
+	font-weight: 400
+
+.divider-horizontal
+	display: block
+	+size(100% 1px)
+	background: $white
 
 .bg-orange-gradient
-	background: url('../img/bg-loader.png') center center no-repeat #FF7933;
-	background-size: cover;
+	background: url('../img/bg-loader.png') center center no-repeat #FF7933
+	background-size: cover
 
 .black-text
 	color: $black
 .grey-text
 	color: $grey
 
-[class*="icon"] 
+[class*="icon"]
 	color: $orange
+	&.success
+		color: $green
 	&::before 
 		color: inherit
+		display: block
+	&.rotate180
+		&::before
+			+transform(rotate(180deg))
+	&.rotate90
+		&::before
+			+transform(rotate(90deg))
+
+.rating, .number-rating
+	.stars
+		+display(flex)
+		+align-items(center)
+		i
+			margin-right: 2px
+			&:last-child
+				margin-right: 0
+	span
+		color: #656565
+		font-size: 9px
+		margin-left: 13px
+	&.rating-grey
+		i
+			color: #A2A2A2
+.number-rating
+	+padding(null 28px)
+	margin-bottom: 20px
+	.stars
+		padding-bottom: 13px
 
 .back-button
-	+position(fixed, 10px null null 13px)
+	+position(fixed, 15px null null 18px)
+	z-index: 10
 	a
 		opacity: .54
 		@extend %transition
+		display: block
 		i
 			color: $white
 		&:hover
 			opacity: .7
 
 .input-field
-	@include position(relative, null)
-	@include padding(6px null)
+	+position(relative, null)
+	+padding(6px null)
 
 .input-field.input-field-icon i,
 .input-field.input-field-icon a
-	@include position(absolute, 50% null null 10px)
-	@include transform(translateY(-50%))
+	+position(absolute, 50% null null 10px)
+	+transform(translateY(-50%))
 
-.input-field.input-field-icon a 
+.input-field.input-field-icon a
 	left: auto
-	right: 23px
+	right: 15px
+
+.input-field.input-field-icon a i
+  position: relative
+  left: auto
+  right: auto
 
 .input-field.input-field-icon input
-	padding-left: 28px
+	padding-left: 27px
 
 .input
-	@include appearance(none)
+	+appearance(none)
 	border: 1px solid $lightGrey
 	-webkit-border-radius: 6px
 	-moz-border-radius: 6px
 	border-radius: 6px
-	@include size(calc(100% - 28px) 39px)
+	+size(calc(100% - 28px) 39px)
 	font-size: em(14)
 	font-weight: 300
 	padding-left: 12px
-	@include placeholder
+	+placeholder
 		color: $grey
+
+.search-courses
+	position: relative
+	button
+		+appearance(none)
+		border: none
+		+position(absolute, 50% 17px null null)
+		+transform(translateY(-50%))
+		font-size: 24px
+		background: transparent
+.input-search
+	+appearance(none)
+	+border-left-radius(25px)
+	+border-right-radius(25px)
+	font-size: 12px
+	padding-left: 42px
+	+size(calc(100% - 42px) 33px)
+	border: none
+	+placeholder
+		opacity: .4
 
 .btns-center
 	text-align: center
 .btn
-	@include appearance(none)
+	+appearance(none)
 	border: none
 	min-width: 213px
 	font-size: 1em
@@ -136,9 +222,9 @@ small
 	color: $white
 	display: block
 	text-align: center
-	@include margin(6px null)
+	+margin(6px null)
 	cursor: pointer
-	@include padding(11px 9px)
+	+padding(11px 9px)
 	@extend %transition
 	&.btn-orange
 		background: $lightOrange
@@ -148,28 +234,52 @@ small
 		color: $black
 		background: $lightGrey
 	&.btn-center
-		@include margin(null auto)
+		+margin(null auto)
 a.btn
 	display: inline-block
 	min-width: calc(213px - 18px)
 
+.btn-start
+	+position(fixed, null 0 0)
+	height: 60px
+	text-align: center
+	background: $orange1
+	text-transform: uppercase
+	a
+		height: 100%
+		color: $white
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		i
+			color: $white
+			font-size: 20px
+			margin-right: 8px
+		&[disabled]
+			background: #DDDDDD
+			pointer-events: none
+		&.success
+			background: $green
+		&.error
+			background: $red
+
 .checkbox
-	@include size(16)
+	+size(16px)
 
 .checkbox-container
 	display: inline-block
 	position: relative
 	padding-left: 25px
 	cursor: pointer
-	@include user-select(none)
+	+user-select(none)
 	input
 		position: absolute
 		opacity: 0
 		cursor: pointer
-		@include size(0)
+		+size(0)
 
 .checkmark
-	@include position(absolute, -1px null null 0)
+	+position(absolute, -1px null null 0)
 	width: 14px
 	height: 14px
 	background-color: transparent
@@ -193,11 +303,11 @@ a.btn
 	display: block
 
 .checkbox-container .checkmark:after
-	@include position(null, -2px null null 4px)
-	@include size(6px 13px)
+	+position(null, -2px null null 4px)
+	+size(6px 13px)
 	border: solid white
 	border-width: 0 3px 3px 0
-	@include transform(rotate(45deg))
+	+transform(rotate(45deg))
 
 .box-shadow
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16)
@@ -206,3 +316,740 @@ a.btn
 	-webkit-border-radius: 6px
 	-moz-border-radius: 6px
 	border-radius: 6px
+
+.progress
+	.row
+		+display(flex)
+		+justify-content(space-between)
+		+align-items(flex-end)
+		p
+			font-size: 12px
+			font-weight: 500
+			color: rgba(0, 0, 0, .54)
+		&.right
+			+justify-content(flex-end)
+
+.progress-bar
+	+size(100% 9px)
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	display: block
+	position: relative
+	background: rgba($blackText, .29)
+	overflow: hidden
+	margin-top: 9px
+	.bar
+		background: $lightOrange
+		height: 100%
+
+.card
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .4)
+	border-radius: 4px
+	margin-bottom: 28px
+	margin-top: 20px
+	background: $white
+	overflow: hidden
+	.card-header
+		background: $white
+		+display(flex)
+		+justify-content(space-between)
+		+padding(9px 16px)
+		&.top
+			+align-items(flex-start)
+		i
+			color: #000000
+		.card-btn
+			opacity: .54
+			i
+				font-size: 8px
+				&::before
+					@extend %transition
+		.left, .right
+			+display(flex)
+			+align-items(center)
+		.info
+			margin-left: 12px
+		.icon
+			+size(40px)
+			background: $lightOrange
+			@extend .circle
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			i
+				font-size: 26px
+				color: $white
+		h4
+			font-size: 14px
+			color: rgba(0, 0, 0, .87)
+		h3
+			font-size: 14px
+			color: rgba(0, 0, 0, .54)
+
+	.card-image
+		+size(100% 96px)
+		display: block
+		background-position: center center
+		position: relative
+		background-size: cover
+		@extend %transition
+		&.big-image
+			height: 291px
+			&::before
+				opacity: .52
+		&::before
+			content: ''
+			+position(absolute, 0)
+			opacity: 0
+			background: #000000
+			@extend %transition
+	.card-resume
+		+padding(16px)
+		border-bottom: 1px solid rgba($black, .49)
+		display: none
+		p
+			font-size: em(12)
+	.card-content
+		background: $lightGrey
+		+padding(21px)
+		display: none
+		&.content-active
+			display: block
+	.card-footer
+		+padding(15px)
+		&.buttons
+			+display(flex)
+			+justify-content(flex-end)
+		a
+			margin-left: 33px
+			color: $orange
+			text-transform: uppercase
+	&.card-open
+		.card-btn
+			i
+				&::before
+					+transform(rotate(0deg))
+	&.card-profile
+		margin-top: 0
+		position: relative
+		bottom: -20px
+		.icon-bg
+			+position(null, 16px 16px null null)
+			color: $lightOrange
+			opacity: .05
+			font-size: 50px
+			@extend %transition
+		.card-content
+			background: $white
+			padding-top: 0
+		.card-header
+			padding-top: 16px
+			.icon-gamification
+				+size(40px)
+				background: $lightOrange
+				-webkit-border-radius: 50%
+				-moz-border-radius: 50%
+				border-radius: 50%
+				+display(flex)
+				+justify-content(center)
+				+align-items(center)
+				margin-right: 12px
+				i
+					color: $white
+					font-size: 21px
+			.status
+				p
+					color: #000000
+					font-weight: 500
+					small
+						opacity: .54
+		&.card-open
+			.icon-bg
+				font-size: 90px
+
+.title
+	h3
+		margin-top: 30px
+	p
+		font-size: 12px
+		color: $black
+
+#fixed-menu
+	flex: 0 0 auto
+	height: 46px
+	z-index: 10
+	background: $white
+	-webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, .16)
+	-moz-box-shadow: 0 5px 6px rgba(0, 0, 0, .16)
+	box-shadow: 0 5px 6px rgba(0, 0, 0, .16)
+	ul
+		height: 100%
+		+display(flex)
+		+justify-content(space-around)
+		+align-items(center)
+		li
+			+display(flex)
+			a
+				font-size: 27px
+				i
+					color: #BEBEBE
+			&.active
+				a
+					i
+						color: $orange
+
+.icon-bg
+	+position(absolute, null)
+
+.banner
+	position: relative
+	margin-bottom: -115px
+	padding-bottom: 130px
+	overflow: hidden
+	background: url('../img/bg-top.jpg') center center no-repeat
+	background-size: cover
+	.icon-bg
+		+position(null, 40px -18px null null)
+		i
+			font-size: 148px
+			color: rgba($white, .2)
+	.title
+		+display(flex)
+		padding-top: 57px
+		padding-right: 50px
+		.icon
+			margin-right: 10px
+			margin-top: -16px
+		h6, p
+			color: $white
+		p
+			margin-top: 15px
+			line-height: 1.5em
+		i
+			font-size: 39px
+			color: $white
+	.courses-area
+		margin-top: 20px
+	.search
+		margin-top: 23px
+	&.width-secondary-banner
+		padding-bottom: 25px
+		margin-bottom: 0
+
+.secondary-banner
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	+padding(40px null 55px)
+	h2
+		font-weight: 700
+		color: $orange1
+		padding-left: 14px
+		padding-right: 90px
+	p
+		padding-left: 14px
+		padding-right: 90px
+		color: $white
+
+.notification
+	background: $orange1
+	text-align: center
+	+padding(22px null)
+	+position(fixed, 0 0 null 0)
+	z-index: 101
+	@extend %transition
+	top: -100px
+	span
+		font-size: 13px
+		color: $white
+	&.success
+		background: $green
+	&.error
+		background: $red
+
+.course-area
+	display: inline-block
+	a
+		+display(flex)
+		+align-items(center)
+		i
+			color: $black
+			opacity: .16
+			font-size: 37px
+		span
+			font-size: 12px
+			color: $white
+			margin-left: 11px
+		&.active
+			i
+				color: $white
+
+.slick-dots
+	text-align: center
+	position: absolute
+	li
+		+size(8px)
+		overflow: hidden
+		font-size: 0
+		border: 2px solid $orange
+		display: inline-block
+		margin-right: 8px
+		-webkit-border-radius: 50%
+		-moz-border-radius: 50%
+		border-radius: 50%
+		@extend %transition
+		button
+			+appearance(none)
+			box-shadow: none
+			border: none
+			background: transparent
+			+size(100%)
+			text-indent: -999px
+			cursor: pointer
+		&.slick-active
+			background: $orange
+		&:last-child
+			margin-right: 0
+
+.slider-courses
+	.slick-dots
+		+position(null, null 0 20px)
+		li
+			border-color: $white
+			&.slick-active
+				background: $white
+
+.navtabs
+	border-bottom: 1px solid rgba($blackText, .21)
+	.gridD
+		+margin(null 35px)
+	ul
+		+display(flex)
+		+align-items(center)
+		+justify-content(space-between)
+		li
+			height: 54px
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			a
+				color: $blackText
+	.navtabs-bar
+		display: block
+		+size(20% 3px)
+		-webkit-border-radius: 5px
+		-moz-border-radius: 5px
+		border-radius: 5px
+		background: $orange
+		position: relative
+		left: 0
+		@extend %transition
+
+.tab-content
+	position: relative
+	opacity: 0
+	top: 20px
+	display: none
+	&:first-child
+		opacity: 1
+		display: block
+		top: 0
+
+.collection
+	.collection-item
+		border-bottom: 1px solid rgba($blackText, .21)
+		+display(flex)
+		+align-items(center)
+		+justify-content(space-between)
+		+padding(22px 30px 22px 36px)
+		.left
+			+display(flex)
+			+align-items(center)
+		.icon
+			min-width: 22px
+			width: 22px
+			margin-right: 24px
+			i
+				font-size: 23px
+			&.icon-circle
+				+size(40px)
+				min-width: 40px
+				-webkit-border-radius: 50%
+				-moz-border-radius: 50%
+				border-radius: 50%
+				+display(flex)
+				+justify-content(center)
+				+align-items(center)
+				background-color: #CBCBCB
+				&.success
+					background: $green
+				&.orange
+					background: $lightOrange
+				i
+					font-size: 23px
+					color: $white
+					margin-top: -3px
+		p
+			font-weight: 500
+			small
+				opacity: .54
+		.info
+			margin-right: 30px
+		.icon-right
+			i
+				font-size: 10px
+				color: $black
+				opacity: .54
+
+.banner-course
+	+padding(147px null 93px)
+	background-size: cover
+	position: relative
+	&::before
+		content: ''
+		+position(absolute, 0)
+		background: #292929
+		opacity: .41
+	.gridD
+		position: relative
+	h1
+		color: $orange1
+		font-weight: 700
+		margin-bottom: 30px
+	p
+		color: $white
+		margin-top: 15px
+
+.infos-course
+	+padding(29px null)
+	border-bottom: 1px solid rgba($blackText, .21)
+	.gridD
+		+display(flex)
+		+align-items(center)
+		+justify-content(space-between)
+		+margin(null 35px)
+		.info
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			i
+				font-size: 19px
+				margin-right: 6px
+			span
+				font-weight: 500
+				color: $blackText
+
+.course-name
+	margin-bottom: 20px
+	p
+		font-weight: 500
+
+.content-course
+	margin-top: 20px
+	margin-bottom: 30px
+	p
+		line-height: 1.9em
+
+.testimonial
+	+padding(22px 35px 22px 28px)
+	+display(flex)
+	border-bottom: 1px solid rgba(#E2E9E6, .9)
+	.avatar
+		margin-right: 20px
+		.image
+			+size(39px)
+			min-width: 39px
+			background-position: center center
+			background-repeat: no-repeat
+			background-size: cover
+			-webkit-border-radius: 50%
+			-moz-border-radius: 50%
+			border-radius: 50%
+	h6
+		color: #656565
+		font-weight: 500
+		margin-bottom: 5px
+	p
+		line-height: em(20)
+	.rating
+		margin-bottom: 12px
+
+.intructors
+	border-top: 1px solid rgba($black, .21)
+	+padding(29px null)
+	.gridD
+		+display(flex)
+		+align-items(center)
+	span
+		color: #3A3A3A
+	p
+		+display(flex)
+		+align-items(center)
+		margin-left: 5px
+		span
+			&:not(:last-child)
+				&::after
+					content: ','
+					margin-right: 5px
+
+.modal
+	+position(fixed, 0)
+	z-index: 100
+	display: none
+	.mask
+		+position(absolute, 0)
+		opacity: .67
+		background: $black
+	.btn-close
+		font-size: 20px
+		display: block
+		text-align: right
+		+padding(14px 24px null)
+		a
+			+size(14px)
+			display: inline-block
+			background: url('../img/icons/close.png') center center no-repeat
+	.modal-content
+		width: 90%
+		+position(absolute, 50% null null 50%)
+		+transform(translate(-50%, -50%))
+		background: $white
+		box-shadow: 0 0 24px rgba($black, .16)
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		margin-top: -30px
+		@extend %transition
+		.modal-content-wrapper
+			+padding(21px 24px 35px)
+			@extend %transition
+	.remember-me
+		margin-top: 30px
+
+#modal-login
+	h4
+		text-align: center
+		margin-bottom: 15px
+	.btns
+		margin-top: 31px
+
+.timeline
+	+padding(22px null 19px)
+	.gridD
+		.overflow
+			+display(flex)
+			+align-items(flex-start)
+			overflow-x: scroll
+	.item
+		+padding(null 8px)
+		min-width: 52px
+		text-align: center
+		.icon
+			+size(40px)
+			+display(flex)
+			+justify-content(center)
+			+align-items(center)
+			background: $lightOrange
+			@extend .circle
+			@extend %blockCenter
+			margin-bottom: 6px
+			i
+				color: $white
+				font-size: 25px
+				margin-top: -2px
+		&.disabled
+			pointer-events: none
+			.icon
+				background: rgba(#DDDDDD, .6)
+			i
+				color: #B2B2B2
+
+.lessons, .timeline
+	background: #F5F5F5
+	.gridD
+		+margin(null 15px)
+.lesson
+	box-shadow: 0 1px 2px rgba($black, .4)
+	background: $white
+	+display(flex)
+	+align-items(center)
+	+justify-content(space-between)
+	+padding(15px 19px 15px 15px)
+	margin-bottom: 11px
+	.left
+		+display(flex)
+		+align-items(center)
+	.icon
+		+size(40px)
+		min-width: 40px
+		background: $lightOrange
+		@extend .circle
+		font-size: 25px
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		margin-right: 12px
+		i
+			color: $white
+			margin-top: -2px
+	p
+		font-weight: 500
+	.btn-start-lesson
+		font-size: 9px
+		i
+			color: $black
+			opacity: .54
+	&.disabled, &:disabled
+		background: rgba(#DDDDDD, .6)
+		pointer-events: none
+		-webkit-box-shadow: none
+		-moz-box-shadow: none
+		box-shadow: none
+		.icon
+			background: #C4C4C4
+			i
+				color: #DDDDDD
+
+.info-lesson
+	+padding(17px 5px)
+	.gridD
+		+display(flex)
+		+align-items(center)
+		.icon
+			+size(40px)
+			min-width: 40px
+			background: $lightOrange
+			@extend .circle
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			margin-right: 12px
+			i
+				font-size: 24px
+				color: $white
+				margin-top: -2px
+
+.content-lesson
+	background: #F5F5F5
+	+padding(29px null 75px)
+	.gridD
+		+margin(null 28px null 48px)
+	p
+		line-height: em(22)
+		padding-bottom: 17px
+
+.radio-container
+	display: block
+	position: relative
+	cursor: pointer
+	font-size: 14px
+	font-weight: 400
+	+user-select(none)
+	+display(flex)
+	+flex-direction(row-reverse)
+	+justify-content(flex-end)
+	+align-items(center)
+	+padding(9px null)
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+
+
+.checkmark-radio
+	+position(relative, 0 null null 0)
+	display: block
+	+size(20px)
+	border: 2px solid $lightOrange
+	background-color: #eee
+	border-radius: 50%
+	margin-right: 9px
+
+.radio-container:hover input ~ .checkmark-radio
+	background-color: #ccc
+
+.radio-container input:checked ~ .checkmark-radio
+	background-color: $lightOrange
+
+.checkmark-radio:after
+	content: ""
+	position: absolute
+	display: none
+
+.radio-container input:checked ~ .checkmark-radio:after
+	display: block
+
+.radio-container .checkmark-radio:after
+	+position(null, 50% null null 50%)
+	+transform(translate(-50%, -50%))
+	border: 3px solid $white
+	+size(13px)
+	border-radius: 50%
+	background: $lightOrange
+
+.question
+	border-bottom: 1px solid rgba(#707070, .2)
+	+padding(30px null)
+
+#modal-conclusion
+	text-align: center
+	.title
+		margin-bottom: 24px
+		.icon
+			position: relative
+			display: inline-block
+			i
+				font-size: 92px
+			.icon-check
+				+position(absolute, 34px -26px null null)
+				@extend .circle
+				+size(40px)
+				display: inline-block
+				background: url('../img/icons/check.png') center center no-repeat $white
+				background-size: 100% auto
+	p
+		font-weight: 500
+		color: rgba(#000000, .87)
+		margin-bottom: 16px
+		&.orange
+			color: #FF9800
+	.line
+		background: #707070
+		opacity: .21
+		+size(100% 1px)
+		display: block
+		margin-bottom: 25px
+	.results
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		+margin(18px null)
+		i
+			margin-right: 5px
+			font-size: 18px
+	.stars-rating
+		ul > li.star.hover > i
+			color: #FFCC36
+		ul
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			li
+				display: inline-block
+				margin-right: 5px
+				a
+					display: block
+					font-size: 20px
+					&:last-child
+						margin-right: 0
+				i
+					color: #DDDDDD
+			> li
+				&.star
+					&.hover
+						i
+							color: $lightOrange
+					&.selected
+						i
+							color: $orange
