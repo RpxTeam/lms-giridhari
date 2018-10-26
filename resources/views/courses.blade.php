@@ -51,26 +51,25 @@
              <div class="tab-content detalhes">
                  <div class="gridD">
                      <div class="course-name">
-                         <p>Nome do curso</p>
+                         <p>{{ $course->title }}</p>
                      </div>
                      <div class="about-course">
                          <p><small>Sobre o Curso</small></p>
                      </div>
                      <div class="content-course">
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem dolores enim eos hic illo inventore iure libero magnam minima minus obcaecati optio pariatur porro quibusdam quos reiciendis, sapiente sint veritatis.
-                         </p>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur cupiditate deleniti dicta dolore dolorem dolores enim eos hic illo inventore iure libero magnam minima minus obcaecati optio pariatur porro quibusdam quos reiciendis, sapiente sint veritatis.
-                         </p>
+                         <p>{!! $course->description !!}</p>
                      </div>
                  </div>
                  <div class="intructors">
                      <div class="gridD">
                          <span>Instrutores:</span>
-                         <p><span>Lore 1</span><span>Lore 2</span><span>Lore 3</span>.</p>
+                         <p>
+                             <span>Instructor 1</span><span>Instructor 2</span><span>Instructor 3</span>.</p>
                      </div>
                  </div>
              </div>
              <div class="tab-content avaliacoes">
+                 @if($datas->count() != 0)
                  <div class="number-rating">
                      <div class="stars">
                          <i class="icon-star-o"></i>
@@ -82,12 +81,15 @@
                      <p>4530 estão satisfeitas com esse curso.</p>
                  </div>
                  <div class="testimonials">
+                     @foreach($datas as $data)
+                     @if ($data->testimonal === null)
+                     @else
                      <div class="testimonial">
                          <div class="avatar">
                              <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
                          </div>
                          <div class="text">
-                             <h6>Aluna Lore</h6>
+                             <h6>{{ $data->name }} {{ $data->lastname }}</h6>
                              <div class="rating rating-grey">
                                  <div class="stars">
                                      <i class="icon-star-o"></i>
@@ -95,51 +97,20 @@
                                      <i class="icon-star-o"></i>
                                      <i class="icon-star"></i>
                                      <i class="icon-star"></i>
-                                     <span>3/5</span>
+                                     <span>{{ $data->rating }}/5</span>
                                  </div>
                              </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
+                             <p>{{ $data->testimonal }}</p>
                          </div>
                      </div>
-                     <div class="testimonial">
-                         <div class="avatar">
-                             <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
-                         </div>
-                         <div class="text">
-                             <h6>Aluna Lore</h6>
-                             <div class="rating rating-grey">
-                                 <div class="stars">
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star"></i>
-                                     <i class="icon-star"></i>
-                                     <span>3/5</span>
-                                 </div>
-                             </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
-                         </div>
-                     </div>
-                     <div class="testimonial">
-                         <div class="avatar">
-                             <div class="image" data-bg="{{ url('assets') }}/img/testimonial.jpg"></div>
-                         </div>
-                         <div class="text">
-                             <h6>Aluna Lore</h6>
-                             <div class="rating rating-grey">
-                                 <div class="stars">
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star-o"></i>
-                                     <i class="icon-star"></i>
-                                     <i class="icon-star"></i>
-                                     <span>3/5</span>
-                                 </div>
-                             </div>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam</p>
-                         </div>
-                     </div>
+                     @endif
+                     @endforeach
                  </div>
+                 @else
+                     <div class="gridD">
+                         <p>Não há avaliações</p>
+                     </div>
+                 @endif
              </div>
              <div class="tab-content conteudo">
                  <div class="gridD">

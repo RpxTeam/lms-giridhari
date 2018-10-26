@@ -539,6 +539,7 @@ a.btn {
 .progress-bar .bar {
   background: #FF9100;
   height: 100%;
+  width: 0%;
 }
 
 .card {
@@ -955,8 +956,22 @@ a.btn {
   background: #E60000;
 }
 
+.courses-area {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.courses-area::-webkit-scrollbar {
+  display: none;
+}
+
 .course-area {
-  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .course-area a {
@@ -986,6 +1001,11 @@ a.btn {
 }
 
 .course-area a.active i {
+  color: #FFFFFF;
+}
+
+.course-area.active a i {
+  opacity: 1;
   color: #FFFFFF;
 }
 
@@ -1281,6 +1301,13 @@ a.btn {
   -ms-flex-pack: justify;
   margin-right: 35px;
   margin-left: 35px;
+}
+
+@media (max-width: 325px) {
+  .infos-course .gridD {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
 }
 
 .infos-course .gridD .info {

@@ -341,7 +341,7 @@ a.btn
 	margin-top: 9px
 	.bar
 		background: $lightOrange
-		height: 100%
+		+size(0% 100%)
 
 .card
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .4)
@@ -568,8 +568,14 @@ a.btn
 	&.error
 		background: $red
 
+.courses-area
+	+display(flex)
+	overflow-x: scroll
+	&::-webkit-scrollbar
+		display: none
+
 .course-area
-	display: inline-block
+	+padding(null 10px)
 	a
 		+display(flex)
 		+align-items(center)
@@ -583,6 +589,11 @@ a.btn
 			margin-left: 11px
 		&.active
 			i
+				color: $white
+	&.active
+		a
+			i
+				opacity: 1
 				color: $white
 
 .slick-dots
@@ -729,6 +740,8 @@ a.btn
 		+align-items(center)
 		+justify-content(space-between)
 		+margin(null 35px)
+		@media(max-width: 325px)
+			+margin(null 15px)
 		.info
 			+display(flex)
 			+align-items(center)
