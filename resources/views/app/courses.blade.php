@@ -91,6 +91,8 @@
         </div>
     </div>
     @else
+        <div class="content">
+            <div class="gridD">
         @foreach($courses as $course)
             <div class="card">
                 <div class="card-header">

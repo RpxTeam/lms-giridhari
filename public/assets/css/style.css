@@ -103,6 +103,12 @@ small {
   font-weight: 400;
 }
 
+@media (max-width: 850px) {
+  canvas {
+    width: 100%;
+  }
+}
+
 .divider-horizontal {
   display: block;
   height: 1px;
